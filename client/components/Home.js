@@ -36,7 +36,8 @@ export default class Home extends Base {
   render() {
 
     return (
-      <Container style={{marginTop: 100, marginBottom: 120}}>
+      <div>
+      <Container style={{marginTop: 100}}>
         <Row>
           <Col className={'centered'}>
             <Scroll.Element name='intro'>
@@ -45,7 +46,10 @@ export default class Home extends Base {
             </Scroll.Element>
           </Col>
         </Row>
+      </Container>
 
+      <div className="bg0">
+      <Container>
         <Intro
           Store={this.Store}
           setStore={this.setStore}
@@ -55,7 +59,11 @@ export default class Home extends Base {
           Store={this.Store}
           setStore={this.setStore}
         />
+      </Container>
+      </div>
 
+      <div className="bg1">
+      <Container>
         <Art
           Store={this.Store}
           setStore={this.setStore}
@@ -65,7 +73,11 @@ export default class Home extends Base {
           Store={this.Store}
           setStore={this.setStore}
         />
+      </Container>
+      </div>
 
+      <div className="bg2">
+      <Container>
         <Roadmap
           Store={this.Store}
           setStore={this.setStore}
@@ -80,7 +92,11 @@ export default class Home extends Base {
         {/*  Store={this.Store}*/}
         {/*  setStore={this.setStore}*/}
         {/*/>*/}
+      </Container>
+      </div>
 
+      <div className="bg3">
+      <Container style={{marginBottom: 50}}>
         <Team
           Store={this.Store}
           setStore={this.setStore}
@@ -95,9 +111,9 @@ export default class Home extends Base {
           Store={this.Store}
           setStore={this.setStore}
         />
-
-
       </Container>
+      </div>
+      </div>
     )
   }
 }

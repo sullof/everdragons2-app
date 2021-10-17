@@ -792,3 +792,35 @@ span.button {
 .bold {
     font-weight: bold !important;
 }
+
+.bg0 {
+    background-image: url(../images/bg000.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+}
+
+.bg1 {
+    background-image: url(../images/bg001.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+}
+
+.bg2 {
+    background-image: url(../images/bg002.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+}
+
+.bg3 {
+    background-image: url(../images/bg003.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+}
