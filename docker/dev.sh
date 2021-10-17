@@ -7,4 +7,4 @@ docker run -it --rm \
   -v $PWD/log:/var/log/everdragons2-com \
   -e NODE_ENV=development \
   -e VIRTUAL_HOST=everdragons2.com.localhost,www.everdragons2.com.localhost \
-  -w /usr/src/app node:12.20.0-alpine3.10 npm run start
+  -w /usr/src/app node:16 npm run start

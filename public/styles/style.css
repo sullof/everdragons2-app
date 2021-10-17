@@ -249,7 +249,7 @@ div.textBlock {
     /*border: 3px solid rgba(200, 230, 255, 0.3);*/
     padding: 36px;
     margin-bottom: 36px;
-    background-color: rgba(255, 255, 255, 0.3)
+    background-color: rgba(255, 255, 255, 0.7)
 }
 
 div.textBlock p:last-child {
