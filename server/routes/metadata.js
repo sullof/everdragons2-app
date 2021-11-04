@@ -32,7 +32,7 @@ router.get('/ed2/:id', async (req, res) => {
       name: 'Agdaroth',
       image: `https://everdragons2.com/dragons/png/10001.png`,
       description: 'EverDragons2 is a new generation of the EverDragons NFT, a collection born in 2018. ED were born on Ethereum, but soon became the first cross-chain NFT ever, and the first NFT deployed to Tron network.',
-      // external_url: `https://everdragons2.com/dragons/10001`,
+      // external_url: `https://everdragons2.com/dragons/agdaroth`,
       // background_color: '#def0e8'
     })
   } else {

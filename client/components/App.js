@@ -54,7 +54,9 @@ class App extends Common {
       'setStore',
       'getContract',
       'updateDimensions',
-      'showModal'
+      'showModal',
+      'setWallet',
+      'connect'
     ])
   }
 
