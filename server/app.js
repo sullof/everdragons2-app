@@ -3,7 +3,6 @@ const fs = require('fs-extra')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const apiV1 = require('./routes/apiV1')
-const metadata = require('./routes/metadata')
 const Logger = require('./lib/Logger')
 const bodyParser = require('body-parser')
 const cors = require('cors')
@@ -34,7 +33,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({limit: '10mb', extended: false}))
 
 app.use('/api/v1', apiV1)
-app.use('/metadata', metadata)
 
 app.use('/index.html', function (req, res) {
   res.redirect('/')
@@ -43,11 +41,10 @@ app.use('/index.html', function (req, res) {
 app.use('/:anything', function (req, res, next) {
   let v = req.params.anything
   switch(v) {
-    case 'favicon.io':
+    case 'favicon.png':
     case 'manifest.json':
     case 'styles':
     case 'images':
-    case 'dragons':
     case 'bundle':
       next()
       break

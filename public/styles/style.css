@@ -33,9 +33,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: #fff;
-    color: #000;
+    color: whitesmoke;
     /*color: #222222;*/
-    font-family: 'Roboto', sans-serif;
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 300;
     /*background-size: 100%;*/
     /*background-position-y: 0;*/
@@ -43,7 +43,7 @@ body {
     /*background-attachment: fixed;*/
     /*background-position: bottom;*/
 
-    background-image: url(../images/bg.jpg);
+    background-image: url(../images/background.png);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -58,9 +58,9 @@ body {
 /*}*/
 
 .textBlock {
-    color: #000;
-    font-family: 'Merriweather', serif;
+    color: whitesmoke;
     font-size: 1rem;
+    border: 1px dashed crimson;
 }
 
 .bigLogo {
@@ -82,10 +82,8 @@ body {
 @media (min-width: 1200px) {
 
     body {
-        background-image: url(../images/bg.jpg);
-        background-repeat: repeat-y;
-        background-size: 100%;
-        background-attachment: inherit;
+        background-image: url(../images/background.png);
+        background-size: cover;
     }
 
 }
@@ -100,7 +98,7 @@ body {
 }
 
 .command, a {
-    color: #8844aa;
+    color: yellow;
     cursor: pointer;
 }
 
@@ -113,7 +111,7 @@ body {
 }
 
 .navbar-light .navbar-text {
-    color: black;
+    color: whitesmoke;
 }
 
 .centered {
@@ -129,18 +127,18 @@ body {
 }
 
 .bg-light {
-    background-color: #EAF8FB !important;
-    border-bottom: 1px dotted aquamarine;
+    /*background-color: #EAF8FB !important;*/
+    /*border-bottom: 1px dotted aquamarine;*/
 }
 
 .big {
     font-size: 5rem;
-    color: #84a;
+    color: whitesmoke;
     margin: 0 0 -28px;
 }
 
 .navbar-light .navbar-text {
-    color: black;
+    color: whitesmoke;
     padding: .5rem 0.4rem !important;
     font-size: 0.8rem;
 }
@@ -208,7 +206,6 @@ body {
     .big {
         font-size: 5rem;
         padding-right: 20%;
-        color: #84a;
         margin: 0 0 -28px;
     }
 
@@ -220,19 +217,15 @@ div.cardContainer {
 }
 
 .istok {
-    font-family: "Istok Web" !important;
 }
 
 .white {
-    color: #dedeeb !important;
 }
 
 .porpora {
-    color: #763a66;
 }
 
 .porporino {
-    color: #734981;
 }
 
 /*div.cardDiv {*/
@@ -249,7 +242,7 @@ div.textBlock {
     /*border: 3px solid rgba(200, 230, 255, 0.3);*/
     padding: 36px;
     margin-bottom: 36px;
-    background-color: rgba(255, 255, 255, 0.7)
+    background-color: rgba(0, 0, 0, 0.9)
 }
 
 div.textBlock p:last-child {
@@ -401,7 +394,7 @@ div.textBlock p:last-child {
 }
 
 small.error {
-    color: crimson !important;
+    color: #ffceec !important;
 }
 
 .m0Auto {
@@ -409,7 +402,6 @@ small.error {
 }
 
 .paglia {
-    color: blueviolet;
     padding-left: 37px;
 }
 
@@ -431,7 +423,6 @@ img.oil {
 }
 
 .roboto {
-    font-family: 'Roboto', sans-serif !important;
 }
 
 .largerp {
@@ -439,7 +430,6 @@ img.oil {
 }
 
 .alice {
-    font-family: 'Alice' !important;
 }
 
 .webcam-capture video {
@@ -447,7 +437,6 @@ img.oil {
 }
 
 button {
-    font-family: Roboto, sans-serif;
 }
 
 div.subtitle {
@@ -485,14 +474,12 @@ img.cover {
 
 
 .footer {
-    color: #73859f;
     width: 100%;
-    background-color: white;
+    /*background-color: white;*/
     padding: 8px 0;
 }
 
 a.cyan {
-    color: #007bff !important;
 }
 
 .spacer {
@@ -508,7 +495,6 @@ a.cyan {
 .claiming {
     font-size: 0.9rem;
     margin: 50px 0 12px;
-    color: rgb(168, 71, 178);
 }
 
 span code {
@@ -523,17 +509,14 @@ span.button {
 }
 
 .navbar-light .navbar-toggler-icon {
-    background-image: url('../images/menu.png') !important;
 }
 
 .notConnected {
-    color: orangered;
 }
 
 .isMine {
     position: relative;
     display: block;
-    color: gold;
     border-radius: 6px;
     border: 1px solid #830;
     float: right;
@@ -547,7 +530,6 @@ span.button {
 .ttype {
     border-color: #64c;
     background: #014;
-    color: #def;
 }
 
 .roundedIn {
@@ -559,22 +541,24 @@ span.button {
 }
 
 .navbar {
-    background-image: url('../images/navbar.jpg') !important;
-    background-color: #e7fbfc;
+    background-color: #00000060 !important;
     border-bottom: none !important;
     background-size: 100%;
+    padding: 1.4rem !important;
 }
 
 .hina {
-    font-family: 'Hina Mincho', serif !important;
+
 }
 
 .chiaro {
-    background: white !important;
-    color: black !important;
+    background: darkmagenta !important;
     border: 1px solid #aaa !important;
     border-radius: 22px !important;
+    color: #ffceec !important;
 }
+
+
 
 .dragons-show img {
     width: 100%;
@@ -582,12 +566,10 @@ span.button {
 
 .dragons-show div.centered {
     font-size: 2rem;
-    font-family: 'Hina Mincho', serif !important;
 }
 
 .home-section h1, h2 {
     text-align: center;
-    font-family: 'Hina Mincho', serif !important;
 }
 
 .home-section h1 {
@@ -601,12 +583,10 @@ span.button {
 
 .home-section h3 {
     font-size: 1.6rem;
-    font-family: 'Roboto', sans-serif;
 }
 
 .home-section h4 {
     font-size: 1.4rem;
-    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -669,7 +649,6 @@ span.button {
 }
 
 .textBlock a, .textBlock .command {
-    color: #d51186 !important;
 }
 
 .pl20p {
@@ -696,10 +675,9 @@ span.button {
 
 .textBlock.tcompact {
     font-size: 1.3rem !important;
-    font-family: 'Merriweather', serif;
     margin-top: 0;
     margin-bottom: 0;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .mr200 {
@@ -747,7 +725,6 @@ span.button {
 
 .textBlock h2.likeh1 {
     font-size: 2.5rem;
-    font-family: 'Hina Mincho', serif !important;
 }
 
 .faqTitle {
@@ -765,7 +742,6 @@ span.button {
     margin-bottom: 48px;
     margin-top: -12px;
     font-style: italic;
-    font-family: 'Pacifico', cursive;
 }
 
 .toTheTop {
@@ -793,34 +769,106 @@ span.button {
     font-weight: bold !important;
 }
 
-.bg0 {
-    background-image: url(../images/bg000.png);
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: contain;
+/*.bg0 {*/
+/*    background-image: url(../images/bg000.png);*/
+/*    background-position: center bottom;*/
+/*    background-repeat: no-repeat;*/
+/*    background-attachment: fixed;*/
+/*    background-size: contain;*/
+/*}*/
+
+/*.bg1 {*/
+/*    background-image: url(../images/bg001.png);*/
+/*    background-position: left center;*/
+/*    background-repeat: no-repeat;*/
+/*    background-attachment: fixed;*/
+/*    background-size: contain;*/
+/*}*/
+
+/*.bg2 {*/
+/*    background-image: url(../images/bg002.png);*/
+/*    background-position: right center;*/
+/*    background-repeat: no-repeat;*/
+/*    background-attachment: fixed;*/
+/*    background-size: contain;*/
+/*}*/
+
+/*.bg3 {*/
+/*    background-image: url(../images/bg003.png);*/
+/*    background-position: center bottom;*/
+/*    background-repeat: no-repeat;*/
+/*    background-attachment: fixed;*/
+/*    background-size: contain;*/
+/*}*/
+
+.socialLinks a {
+    color: white !important;
+    text-decoration: none;
 }
 
-.bg1 {
-    background-image: url(../images/bg001.png);
-    background-position: left center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: contain;
+.socialLinks a:hover {
+    color: yellow !important;
+    text-decoration: none;
 }
 
-.bg2 {
-    background-image: url(../images/bg002.png);
-    background-position: right center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: contain;
+.socialLinks i {
+    font-size: 1.4rem;
 }
 
-.bg3 {
-    background-image: url(../images/bg003.png);
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: contain;
+.bitSmaller {
+    font-size: 0.8rem;
+    margin-right: 12px;
+    color: yellow !important;
+}
+
+/*input::placeholder { !* Chrome, Firefox, Opera, Safari 10.1+ *!*/
+/*    color: #bfc7d3 !important;*/
+/*}*/
+
+.input-error {
+    background: #cc0040;
+    padding: 12px 12px 0;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+div.label {
+    padding: 8px 0 12px;
+}
+
+.aqua {
+    color: aqua !important;
+}
+
+.imgLogo {
+    margin-bottom: 32px;
+}
+
+.imgLogo img {
+    width: 300px !important;
+}
+
+.topContainer {
+    margin-top: 100px;
+}
+
+.crimson {
+    color: crimson;
+    font-weight: normal;
+}
+
+.digit {
+    font-family: 'Ubuntu Mono', sans-serif;
+}
+
+.error {
+    background-color: crimson;
+    color: floralwhite;
+    padding: 8px 13px;
+    border-radius: 6px;
+    margin-top: 23px;
+    font-size: 1rem;
 }

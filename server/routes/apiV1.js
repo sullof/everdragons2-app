@@ -1,58 +1,97 @@
 const express = require('express')
 const router = express.Router()
-const sigUtil = require('eth-sig-util')
+const ethers = require('ethers')
+// const sigUtil = require('eth-sig-util')
 const db = require('../lib/Db')
-const Address = require('../../client/utils/Address')
-const path = require('path')
-const fs = require('fs-extra')
-const {getContract} = require('../lib/utils')
-const bot = require('../lib/bot')
+// const Address = require('../../client/utils/Address')
+// const path = require('path')
+// const fs = require('fs-extra')
+const {signPackedData, getPackedHash} = require('../lib/utils')
 
-async function savePicture(picture, serial, address) {
-  const base64Data = picture.replace(/^[^,]+,/, '')
-  const proofs = path.resolve(__dirname, '../../db/proofs')
-  await fs.ensureDir(proofs)
-  const fn = [address, serial].join('_') + '.png'
-  await fs.writeFile(path.resolve(proofs, fn), base64Data, {encoding: 'base64'})
-}
-
-async function getPictureAsBase64(serial, address) {
-  const proofs = path.resolve(__dirname, '../../db/proofs')
-  const fn = [address, serial].join('_') + '.png'
-  return fs.readFile(path.resolve(proofs, fn), 'base64')
-}
-
-router.get('/tokens', async (req, res) => {
-  let {forceReload, chainId} = req.query
-  chainId = parseInt(chainId)
-  if (!cachedOwners[chainId] || forceReload || Date.now() - lastCachedAt[chainId] > 300000) {
-    cachedOwners[chainId] = {}
+router.post('/verify-redeem-code/:redeemCode', async (req, res) => {
+  const connectedWallet = req.get('Connected-wallet')
+  const chainId = req.get('Chain-id')
+  const {redeemCode} = req.params
+  let redeemCodes = db.get('redeemCodes') || {}
+  let codes = db.get('codes') || {}
+  if (redeemCodes[redeemCode]) {
+    let code = codes[redeemCodes[redeemCode]]
+    if (code.status === 0) {
+      res.json({
+        success: false,
+        error: 'Redeem code already used'
+      })
+    } else {
+      let authCode = ethers.utils.id(redeemCode)
+      let hash = await getPackedHash(chainId, connectedWallet, authCode)
+      if (hash) {
+        let signature = await signPackedData(hash)
+        res.json({
+          success: true,
+          member: code.member,
+          signature,
+          authCode
+        })
+      } else {
+        res.json({
+          success: false,
+          error: 'Cannot connect to blockchain'
+        })
+      }
+    }
+  } else {
+    res.json({
+      success: false,
+      error: 'Redeem code not found'
+    })
   }
-  let tokens = db.get('claimed') || {}
-  // const contract = getContract(chainId)
-  // if (contract) {
-  //   for (let id in tokens) {
-  //     let token = tokens[id]
-  //     if (cachedOwners[chainId][id]) {
-  //       token.owner = cachedOwners[chainId][id]
-  //     } else {
-  //       try {
-  //         let owner = await contract.ownerOf(id)
-  //         cachedOwners[chainId][id] = token.owner = owner
-  //         lastCachedAt[chainId] = Date.now()
-  //       } catch (e) {
-  //         delete token.owner
-  //         // console.error(e.message)
-  //       }
-  //     }
-  //   }
-  // }
-  res.json({
-    success: true,
-    tokens
-  })
 })
 
+router.post('/set-used-redeem-code/:redeemCode', async (req, res) => {
+  const {redeemCode} = req.params
+  let redeemCodes = db.get('redeemCodes') || {}
+  let codes = db.get('codes') || {}
+  if (redeemCodes[redeemCode]) {
+    codes[redeemCodes[redeemCode]].status = 0
+    db.set('codes', codes)
+    res.json({
+      success: true
+    })
+  } else {
+    res.json({
+      success: false
+    })
+  }
+})
+
+router.get('/new-code/:code/for/:member', async (req, res) => {
+  const authToken = req.get('Auth-token')
+  if (
+    process.env.AUTH_TOKEN && // < in testing the variable will be empty
+    authToken !== process.env.AUTH_TOKEN) {
+    return res.json({
+      error: 403,
+      message: 'Forbidden'
+    })
+  }
+  let {code, member} = req.params
+  let tmp = member.split('#')
+  if (/[^a-zA-Z0-9_]/g.test(tmp[0]) || !/^\d{4}$/.test(tmp[1])) {
+    return res.json({
+      error: 500,
+      message: 'Member name should be in `nickname#0000` format'
+    })
+  }
+  let codes = db.get('codes') || {}
+  codes[code] = {
+    member,
+    status: 1
+  }
+  db.set('codes', codes)
+  res.json({
+    success: true
+  })
+})
 
 
 module.exports = router

@@ -1,6 +1,6 @@
-# EverDragons2 NFT Project
+# SynCity NFT Project
 
-**EverDragons2** Dapp at [https://everdragons2.com](https://everdragons2.com)
+Thanks to [EverDragons2](https://everdragons2.com) for the base code used in this app.
 
 ## Installation
 
@@ -21,14 +21,26 @@ npm i -g pnpm
 
 ```
 
-then install the dependencies, build the project and run it
+then install the dependencies, build the project and run it~~~~
 ```
 pnpm i
 pnpm run build
 pnpm run start
 ```
 
-and connect to [http://localhost:6660](http://localhost:6660).~~~~
+and connect to [http://localhost:6660](http://localhost:6660).
+
+## The Discord bot
+
+Install pm2 with
+```
+pnpm i -g pm2
+```
+and launch
+```
+./start-bot.sh
+```
+It expects that in `bot/.env` there is a valid Discord token.
 
 ## Copyright
 

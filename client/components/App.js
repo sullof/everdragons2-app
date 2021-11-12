@@ -17,6 +17,7 @@ const ethers = require('ethers')
 // import Web3Modal from 'web3modal'
 
 import {Contract} from '@ethersproject/contracts'
+import clientApi from '../utils/ClientApi'
 
 import config from '../config'
 
@@ -25,19 +26,18 @@ import ls from 'local-storage'
 import Common from './Common'
 import Header from './Header'
 import Home from './Home'
-import Admin from './Admin'
+// import Admin from './Admin'
 import Error404 from './Error404'
-import Footer from './Footer'
-import LandingPage from './LandingPage'
-import FullStory from './FullStory'
 
 class App extends Common {
 
   constructor(props) {
     super(props)
 
+    let localStore = JSON.parse(ls('localStore') || '{}')
+
     this.state = {
-      Store: {
+      Store: Object.assign({
         content: {},
         editing: {},
         temp: {},
@@ -45,14 +45,14 @@ class App extends Common {
         config,
         width: this.getWidth(),
         pathname: window.location.pathname
-      }
+      }, localStore)
     }
 
     this.bindMany([
       'handleClose',
       'handleShow',
       'setStore',
-      'getContract',
+      'getContracts',
       'updateDimensions',
       'showModal',
       'setWallet',
@@ -89,7 +89,9 @@ class App extends Common {
 
   async componentDidMount() {
     window.addEventListener('resize', this.updateDimensions.bind(this))
-    // await this.connect(true)
+    if (this.state.Store.metamasked) {
+      this.connect()
+    }
   }
 
   async setWallet() {
@@ -97,32 +99,32 @@ class App extends Common {
       const provider = new ethers.providers.Web3Provider(window.ethereum)
       const signer = provider.getSigner()
       const chainId = (await provider.getNetwork()).chainId
-      const signedInAddress = await signer.getAddress()
-
+      const connectedWallet = await signer.getAddress()
       const {
-        contract,
+        contracts,
         connectedNetwork,
         networkNotSupported
-      } = this.getContract(config, chainId, provider)
-
+      } = this.getContracts(config, chainId, provider)
       this.setStore({
         provider,
         signer,
-        signedInAddress,
+        connectedWallet,
         chainId,
-        contract,
+        contracts,
         connectedNetwork,
         networkNotSupported
       })
+      this.setStore({
+        metamasked: true
+      }, true)
+      clientApi.setConnectedWallet(connectedWallet, chainId)
     } catch (e) {
-      window.location.reload()
+      // window.location.reload()
     }
   }
 
-  async connect(dontShowError) {
-
+  async connect() {
     if (typeof window.ethereum !== 'undefined') {
-
       if (await window.ethereum.request({method: 'eth_requestAccounts'})) {
 
         window.ethereum.on('accountsChanged', () => window.location.reload())
@@ -131,18 +133,7 @@ class App extends Common {
 
         this.setWallet()
       }
-
-    } else {
-
-      // if (!dontShowError) {
-      //   this.showModal(
-      //     'No wallet extention found',
-      //     'Please, activate your wallet and reload the page',
-      //     'Ok'
-      //   )
-      // }
     }
-
   }
 
   showModal(modalTitle, modalBody, modalClose, secondButton, modalAction) {
@@ -156,24 +147,21 @@ class App extends Common {
     })
   }
 
-
-  getContract(config, chainId, web3Provider) {
-    let contract
+  getContracts(config, chainId, web3Provider) {
+    let contracts = {}
     let networkNotSupported = false
     let connectedNetwork = null
-
-    if (config.address[chainId]) {
-      contract = new Contract(config.address[chainId], config.abi, web3Provider)
-      for (let name in config.supported) {
-        if (config.supported[name] === chainId) {
-          connectedNetwork = name
-        }
+    let addresses = config.address[chainId]
+    if (addresses) {
+      connectedNetwork = config.supportedId[chainId]
+      for (let contractName in addresses) {
+        contracts[contractName] = new Contract(addresses[contractName], config.abi[contractName], web3Provider)
       }
     } else {
       networkNotSupported = true
     }
     return {
-      contract,
+      contracts,
       connectedNetwork,
       networkNotSupported
     }
@@ -181,15 +169,19 @@ class App extends Common {
 
   setStore(newProps, localStorage) {
     let store = this.state.Store
+    let localStore = JSON.parse(ls('localStore') || '{}')
+    let saveLocalStore = false
     for (let i in newProps) {
       if (newProps[i] === null) {
         if (localStorage) {
-          ls.remove(i)
+          delete localStore[i]
+          saveLocalStore = true
         }
         delete store[i]
       } else {
         if (localStorage) {
-          ls(i, newProps[i])
+          localStore[i] = newProps[i]
+          saveLocalStore = true
         }
         store[i] = newProps[i]
       }
@@ -197,6 +189,9 @@ class App extends Common {
     this.setState({
       Store: store
     })
+    if (saveLocalStore) {
+      ls('localStore', JSON.stringify(localStore))
+    }
   }
 
   render() {
@@ -211,38 +206,32 @@ class App extends Common {
       />
       <main>
         <Switch>
-          {/*<Route exact path="/">*/}
-          {/*  <LandingPage*/}
-          {/*    Store={Store}*/}
-          {/*    setStore={this.setStore}*/}
-          {/*  />*/}
-          {/*</Route>*/}
           <Route exact path="/">
             <Home
               Store={Store}
               setStore={this.setStore}
             />
           </Route>
-          <Route exact path="/story">
-            <FullStory
-              Store={Store}
-              setStore={this.setStore}
-            />
-          </Route>
-          <Route exact path="/admin">
-            {
-              Store.signedInAddress
-                ? (
-                  Address.isAdmin(Store.signedInAddress)
-                    ? <Admin
-                      Store={Store}
-                      setStore={this.setStore}
-                    />
-                    : <Redirect to={'/404'}/>
-                )
-                : null
-            }
-          </Route>
+          {/*<Route exact path="/story">*/}
+          {/*  <FullStory*/}
+          {/*    Store={Store}*/}
+          {/*    setStore={this.setStore}*/}
+          {/*  />*/}
+          {/*</Route>*/}
+          {/*<Route exact path="/admin">*/}
+          {/*  {*/}
+          {/*    Store.connectedWallet*/}
+          {/*      ? (*/}
+          {/*        Address.isAdmin(Store.connectedWallet)*/}
+          {/*          ? <Admin*/}
+          {/*            Store={Store}*/}
+          {/*            setStore={this.setStore}*/}
+          {/*          />*/}
+          {/*          : <Redirect to={'/404'}/>*/}
+          {/*      )*/}
+          {/*      : null*/}
+          {/*  }*/}
+          {/*</Route>*/}
           <Route exact path="*">
             <Error404
               Store={Store}
@@ -250,7 +239,7 @@ class App extends Common {
             />
           </Route>
         </Switch>
-        <Footer/>
+        {/*<Footer/>*/}
       </main>
       {Store.showModal
         ? <Modal.Dialog>

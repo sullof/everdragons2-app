@@ -1,4 +1,4 @@
-
+require('dotenv').config()
 const app = require('./server/app')
 const {sleep} = require('./server/lib/utils')
 

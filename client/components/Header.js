@@ -34,8 +34,7 @@ export default class Header extends Base {
   }
 
   ellipseAddress(address) {
-    const width = 4
-    return `${address.slice(0, width)}...${address.slice(-4)}`
+    return `${address.slice(0, 6)}...${address.slice(-4)}`
   }
 
   componentDidMount() {
@@ -67,27 +66,28 @@ export default class Header extends Base {
 
     let address = null
     let shortAddress
-    if (this.Store.signedInAddress) {
-      let fullAddress = this.Store.signedInAddress
+    if (this.Store.connectedWallet) {
+      let fullAddress = this.Store.connectedWallet
       shortAddress = this.ellipseAddress(fullAddress)
       if (this.state.addressExpanded) {
-        address = <span>{this.Store.signedInAddress}
+        address = <span>{this.Store.connectedWallet}
           {/*  <i onClick={this.expandAddress}*/}
           {/*                                                className="command fa fa-minus-circle"*/}
           {/*/>*/}
         </span>
       } else {
         address = <span>{shortAddress}
-          {isPhone ? null :
-            <i style={{marginLeft: 5}} onClick={this.expandAddress}
-               className="command fa fa-plus-circle"
-            />
-          }</span>
+          {/*{isPhone ? null :*/}
+          {/*  <i style={{marginLeft: 5}} onClick={this.expandAddress}*/}
+          {/*     className="command fa fa-plus-circle"*/}
+          {/*  />*/}
+          {/*}*/}
+        </span>
       }
     }
 
     let connectedTo = <span className={'connected'}>{
-      this.Store.signedInAddress
+      this.Store.connectedWallet
         ? <span className={'notConnected'}>Switch to Ethereum Mainnet</span>
         : null
     }
@@ -112,76 +112,62 @@ export default class Header extends Base {
       }
     }
 
-    console.log(this.state.pathname)
+    // console.log(this.state.pathname)
 
-    return <Navbar expanded={expanded}  fixed="top" bg="light" expand="lg" className={'roboto'}>
-      <Navbar.Brand href="/"><img src={'/images/everDragons2Icon.png'} style={{height: 40}}/></Navbar.Brand>
+    return <Navbar expanded={expanded}  fixed="top" bg="dark" expand="lg" className={'roboto'}>
+      <Navbar.Brand href="/"><img src={'/images/syncity-full-horizontal.png'} style={{height: 40}}/></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav"
                      onClick={ this.setExpanded}
       />
       <Navbar.Collapse  id="navbarScroll">
 
-        {this.state.pathname === '/'
-          ?
           <Nav
             className="mr-auto my-2 my-lg-0"
             navbarScroll
           >
-            <Scroll.Link
-              offset={-80}
-              spy={true} smooth={true} to='intro' onClick={this.setExpanded}>Intro</Scroll.Link>
-            <Scroll.Link
-              offset={-80}
-              spy={true} smooth={true} to='story' onClick={this.setExpanded}>Story</Scroll.Link>
-            <Scroll.Link
-              offset={-80}
-              spy={true} smooth={true} to='art' onClick={this.setExpanded}>Art</Scroll.Link>
-            <Scroll.Link
-              offset={-80}
-              spy={true} smooth={true} to='faq' onClick={this.setExpanded}>FAQ</Scroll.Link>
-            <Scroll.Link
-              offset={-80}
-              spy={true} smooth={true} to='roadmap' onClick={this.setExpanded}>Roadmap</Scroll.Link>
-            <Scroll.Link
-              offset={-80}
-              spy={true} smooth={true} to='sale' onClick={this.setExpanded}>Sale</Scroll.Link>
             {/*<Scroll.Link*/}
             {/*  offset={-80}*/}
-            {/*  spy={true} smooth={true} to='drops' onClick={this.setExpanded}>Drops</Scroll.Link>*/}
-            <Scroll.Link
-              offset={-80}
-              spy={true} smooth={true} to='team' onClick={this.setExpanded}>Team</Scroll.Link>
+            {/*  spy={true} smooth={true} to='intro' onClick={this.setExpanded}>Intro</Scroll.Link>*/}
+
             {/*<Scroll.Link*/}
             {/*  offset={-80}*/}
             {/*  spy={true} smooth={true} to='ed'>ED Original</Scroll.Link>*/}
           </Nav>
 
-          :
-          <Nav
-            className="mr-auto my-2 my-lg-0"
-            style={{maxHeight: '100px'}}
-            navbarScroll
-          >
-            <Nav.Link as={Link} to="/" onClick={this.setExpanded}>Home</Nav.Link>
-          </Nav>
-
-        }
       </Navbar.Collapse>
 
       <Navbar.Collapse className="justify-content-end">
+        <Navbar.Text className={'socialLinks'}>
+
+          <a
+             href={'https://discord.gg/VGxEZNa85a'} style={{color: 'yellow'}}
+             rel="noreferrer"><span className={'bitSmaller'}>JOIN US</span>
+
+            <i className="fab fa-discord" style={{color: 'yellow'}}/>
+          </a>
+          <a href="http://t.me/SynCityHQ" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-telegram" />
+          </a>
+          <a href="https://twitter.com/SynCityHQ" target="_blank"
+             rel="noopener noreferrer">
+            <i className="fab fa-twitter" /></a>
+
+        </Navbar.Text>
+
+
         <Navbar.Text>
           {connectedTo}
         </Navbar.Text>
         {
-          this.Store.signedInAddress
-            ? <Navbar.Text>
+          this.Store.connectedWallet
+            ? <Navbar.Text className={'aqua'}>
               <i className="fas fa-user-astronaut" style={{marginRight: 10}}/>
               {address}
             </Navbar.Text>
-            : <Button onClick={this.props.connect} variant="primary" className={'chiaro'}>Connect your wallet</Button>
+            : <Button onClick={this.props.connect}>Connect your wallet</Button>
         }
         {
-          Address.isAdmin(this.Store.signedInAddress)
+          Address.isAdmin(this.Store.connectedWallet)
             ? <Navbar.Text>
               <Link to="/admin"><i className="fas fa-tools"/> Admin</Link>
             </Navbar.Text>

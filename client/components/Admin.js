@@ -39,7 +39,7 @@ class Admin extends Base {
 
     const {msgParams, signature} = await auth.getSignedAuthToken(
         this.Store.chainId,
-        this.Store.signedInAddress,
+        this.Store.connectedWallet,
         {
           api: 'get-preclaims'
         }
@@ -63,7 +63,7 @@ class Admin extends Base {
   async addClaims() {
     const {msgParams, signature} = await auth.getSignedAuthToken(
       this.Store.chainId,
-      this.Store.signedInAddress,
+      this.Store.connectedWallet,
       {
         api: 'set-claims'
       }

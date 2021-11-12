@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-host=everdragons2-com
+host=offficiallly-com
 
 if [[ $1 != '' ]]; then
   host=$1

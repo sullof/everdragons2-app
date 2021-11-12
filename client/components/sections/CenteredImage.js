@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-undef
 const {Row, Col} = ReactBootstrap
 
-import Ab from '../Ab'
+import Ab from '../utils/Ab'
 
 export default class CenteredImage extends React.Component {
 
