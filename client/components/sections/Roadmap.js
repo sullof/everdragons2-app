@@ -132,3 +132,11 @@ More EverDragons will populate the planet. Holders of two or more EverDragons2 w
     )
   }
 }
+
+
+const a = {
+  "cross_chain_twin_contracts": {
+    "matic": "0x5303242fd38e7e092f7812f6b975935c0ef96822",
+    "solana": "4eaHsFPPPv29j6oVFxEtBY9r79bid5qC4FevEF6c8z1T"
+  }
+}
