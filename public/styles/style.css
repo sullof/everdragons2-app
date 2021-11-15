@@ -824,3 +824,7 @@ span.button {
     background-attachment: fixed;
     background-size: contain;
 }
+
+.roadmap li {
+    font-size: 1.1rem;
+}
