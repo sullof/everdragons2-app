@@ -78,7 +78,7 @@ More EverDragons will populate the planet. Holders of two or more EverDragons2 w
       <div className={'home-section'}>
         <Scroll.Element name='roadmap'><h1>Roadmap</h1></Scroll.Element>
         {/*{this.steps()}*/}
-        <div key={'key'+Math.random()} className={'textBlock'}>
+        <div key={'key'+Math.random()} className={'textBlock roadmap'}>
           <h2>The journey of the dragon</h2>
           <div style={{fontStyle: 'italic'}}>In 2018, 972 EverDragons discovered a hospitable planet and established a community in the Ethereum blockchain. A few of them, the most adventurous, crossed the ocean to reach POA Network and, later, Tron. In the new lands, 360 new dragons have been born.</div>
 
@@ -91,32 +91,42 @@ More EverDragons will populate the planet. Holders of two or more EverDragons2 w
           <div>She is willing to give free eggs to every protector of an original EverDragons, and sell 8000 to the most excellent collectors.</div>
 
           <h4>Before starting the drop</h4>
-          <div>500 members of the <Ab link={'https://discord.gg/AzfFnUjrnG'} label={'community'}/> who will invite three new members first will skip two steps in the Dutch auction, i.e., have a ~20% discount to mint an egg.</div>
+          <li>500 members of the <Ab link={'https://discord.gg/AzfFnUjrnG'} label={'community'}/> who will invite three new members first will skip two steps in the Dutch auction, i.e., have a ~20% discount to mint an egg.</li>
+          <li>The dragons' riders (EDD) will donate 1 ETH to the <Ab link={'https://komododragon.org'} label={'Komodo Survival Program'}/>, an organization for the safeguard of the endangered Komodo dragon. </li>
 
           <h4>When 1000 eggs are collected</h4>
-          <div>Agdaroth will give one rare dragon to three humans who welcomed the first eggs.</div>
+          <li>Agdaroth will give one rare dragon to three humans among the 1000 who welcomed the first eggs.</li>
 
           <h4>When 3000 eggs are collected</h4>
-          <div>She will donate one more dragon to the ten most active members of the welcoming community of humans.</div>
+          <li>The EDD will donate 3 more ETH to the Komodo Survival Program.</li>
+          <li>Agdaroth will giveaway one more dragon to the ten most active members of the welcoming community of humans.</li>
 
           <h4>When 5000 eggs are collected</h4>
-          <div>She will airdrop a unique, rainbow dragon to a lucky, passionate community member.</div>
+          <li>Agdaroth will airdrop a unique, rainbow dragon to a lucky, passionate community member.</li>
 
           <h4>When 7000 eggs are collected</h4>
-          <div>Agdaroth will gift four couples of EverDragons2 with an adorable, beautiful cub.</div>
+          <li>The EDD will add other 3 ETH to the donation to the Komodo Survival Program.</li>
+          <li>Agdaroth will gift four couples of EverDragons2 with an adorable, beautiful baby dragon.</li>
 
           <h4>When all the eggs are collected</h4>
-          <div>A new bridge will be built to allow the EverDragons2 to cross the oceans. Then, the dragons' riders will donate 10+ ETH to a non-profit organization whose mission is to save the last dragons on Earth from extinction. The organization will send a thank you video to the community expressing their gratitude and explaining how the funds will be used.</div>
+          <li>A new bridge will be built to allow the EverDragons2 to cross the oceans.</li>
+          <li>The EDD will give 3 more ETH to the Komodo Survival Program, who will send a thank you video to the community explaining how the funds will be used.</li>
 
-          <div>When the eggs hatch, the dragons will be listed on Rarity Tools and other marketplaces.</div>
+          <h4>When the eggs hatch</h4>
+          <li>The dragons will be revealed</li>
+          <li>The dragons will be listed on Rarity Tools and other marketplaces.</li>
+          <li>The lucky owner of Komodo will win a trip for two to Komodo Island and there will participate in a one-in-a-life mission with the Komodo Survival Program.</li>
+
           <h4>Special bonus</h4>
-          <div>An avatar with the dragon's head will be airdropped on Polygon Network for every EverDragons2 to all the holders.</div>
+          <li>An avatar with the dragon's head will be airdropped on Polygon Network for every EverDragons2 to all the holders.</li>
+          <li>Wonder what will it happen to the eggs...</li>
 
           <h4>Finally, the <span className={'bold'}>Dragons' Cavern</span> will open its doors</h4>
-          <div>An exclusive club where EverDragons2 holders can become dragons' riders. They will grow the project with the initial riders, vote for vital decisions, and suggest new directions, including games and battles between the most formidable dragons.</div>
+          <li>An exclusive club where EverDragons2 holders can become dragons' riders. They will grow the project with the initial riders, vote for vital decisions, and suggest new directions, including games and battles between the most formidable dragons.</li>
 
           <h3 style={{paddingTop: 24}}>Going towards the future</h3>
-          <div>More EverDragons will populate the planet. Holders of two or more EverDragons2 will have babies for free, mutant dragons will show up, and formidable new species will appear out of a sudden.</div>
+          <div>More EverDragons will populate the planet. Holders of two or more EverDragons2 may have babies, mutant dragons will show up, and formidable new species will appear out of a sudden.</div>
+          <div>The ED2 DAO will start its activity and decide next steps. The 20% of the sale will go in the DAO treasury, but more money will come from the secondary market. Synthetic tokens will allow holders to play games without risks of losing their dragons. And a lot more...</div>
         </div>
       </div>
     )
