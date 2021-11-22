@@ -16,7 +16,6 @@ export default class Intro extends Base {
 
     this.bindMany([
       'slide',
-      'text'
     ])
   }
 
@@ -32,10 +31,6 @@ export default class Intro extends Base {
     index++
     this.setState({index})
     this.setTimeout(this.slide, 3000)
-  }
-
-  text() {
-    return `EverDragons2 is a collection of 10001 dragons randomly generated from hundreds of assets. Historically, 1332 unique EverDragons were minted in 2018 among Ethereum, POA Network, and Tron. Back then, the owners could move their dragons across blockchains and play a variety of games. Like the originals, the new EverDragons will all have unique DNA, be collectible, and safely stored on the blockchain as ERC-721 Tokens.`
   }
 
   getSingle(i) {
@@ -111,7 +106,7 @@ export default class Intro extends Base {
         <Row>
           <Col>
             <div className={'textBlock'}>
-              <Markdown source={this.text()}/>
+              EverDragons2 is a collection of 10001 dragons randomly generated from hundreds of assets. Historically, 1332 unique EverDragons were minted in 2018 among Ethereum, POA Network, and Tron. Back then, the owners could move their dragons <span className={'bold'}>across blockchains and play a variety of games</span>. Like the originals, the new EverDragons will all have unique DNA, be collectible, and safely stored on the blockchain as ERC-721 Tokens.
             </div>
           </Col>
         </Row>

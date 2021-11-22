@@ -12,7 +12,7 @@ export default class FAQ extends Base {
     super(props);
 
     this.state = {
-      expanded: false
+      expanded: {}
     }
 
     this.bindMany([
@@ -25,6 +25,7 @@ export default class FAQ extends Base {
   }
 
   faq() {
+    const {expanded} = this.state
     const faqs = [
       ['When are the new EverDragons dropping?',
         <span>The exact date is to be defined. But, it will most likely be around December 14th, at 1pm EST.<br/>
@@ -56,11 +57,37 @@ export default class FAQ extends Base {
     let i = 0
     const rows = []
 
-    function faqRow(faq) {
+    const faqRow = faq => {
+
+      const onClick = faq ? (key => value => {
+        const expanded = {}
+        expanded[key] = value
+        this.setState({expanded})
+      })(faq[0]) : new Function
+
       return <Col xs={12} lg={4} key={'faq' + Math.random()}>{
-        faq ? <div className={'textBlock'}>
-            <div className={'faqTitle'}>{faq[0]}</div>
-            <div className={'faqBody'}>{faq[1]}</div>
+        faq ? <div className={'textBlock smallBlock'}>
+            <div className={'faqTitle'}
+                 onClick={() => onClick(!expanded[faq[0]])}
+            >
+              <div className={'floatRight'}>
+                {
+                  expanded[faq[0]]
+                    ? <i className="fas fa-caret-up"
+                         // onClick={() => onClick(false)}
+                    />
+                    : <i className="fas fa-caret-down"
+                         // onClick={() => onClick(true)}
+                    />
+                }
+              </div>
+
+              {faq[0]}</div>
+            {
+              expanded[faq[0]]
+                ? <div className={'faqBody'}>{faq[1]}</div>
+                : null
+            }
           </div>
           : null
       }
