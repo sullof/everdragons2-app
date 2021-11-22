@@ -23,20 +23,20 @@ export default class Sale extends Base {
     const text = `
 EverDragons2 will use a Dutch Auction.
 
-It will avoid gas war and will generate a fair distribution among the community.
+This will avoid gas war and a fair distribution for the community.
 
 The sale will start at an inflated price, decreasing by 10% every hour, reaching a floor after 32h.
 
-The sale will happen someday around December 15th.
+The sale will happen some day to be defined around December 15th.
 `
 
     return (
       <div className={'home-section'}>
-      <Scroll.Element name='sale'><h1>The Sale</h1></Scroll.Element>
+      <Scroll.Element name='sale'><h1>Blog posts</h1></Scroll.Element>
       <Row>
           <Col>
-            <div className={'textBlock'}>
-              <Markdown source={text}/>
+            <div className={'textBlock smallBlock'}>
+              <Ab link={'https://hackernoon.com/rediscovering-the-everdragons-the-first-cross-chain-nfts'} label={'Rediscovering the EverDragons, the First Cross-Chain NFTs'}/>
             </div>
           </Col>
       </Row>
