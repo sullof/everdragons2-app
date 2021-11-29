@@ -1,4 +1,4 @@
-const EverDragons2 = require('./EverDragons2.json')
+const Everdragons2 = require('./EverDragons2.json')
 
 let isDev
 if (typeof window !== 'undefined') {
@@ -35,7 +35,7 @@ const config = {
     80001: '0x9F0F2fC519F3169C51081d54D9f8E484BDeC36F7',
     137: '0x9F0F2fC519F3169C51081d54D9f8E484BDeC36F7'
   },
-  abi: EverDragons2.abi
+  abi: Everdragons2.abi
 }
 
 module.exports = config

@@ -53,6 +53,24 @@ body {
     height:100%;
 }
 
+.teamMember {
+    background-repeat: no-repeat;
+    background-position: center;
+    /*background-attachment: fixed;*/
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.teamname {
+    margin-top: -25px;
+}
+
+.teamMember .socialLinks {
+    margin: 0 6px;
+    display: inline;
+}
+
 /*.navbar-toggler.collapsed {*/
 /*    visibility: hidden;*/
 /*}*/
@@ -61,6 +79,7 @@ body {
     color: #000;
     font-family: 'Merriweather', serif;
     font-size: 1rem;
+    border: 12px solid white;
 }
 
 .bigLogo {
@@ -673,7 +692,7 @@ span.button {
 }
 
 .pl20p {
- padding-left: 100px !important;
+    padding-left: 100px !important;
 }
 
 .pr20p {
@@ -716,9 +735,9 @@ span.button {
 }
 
 @media (max-width: 990px) {
-    .teamname {
-        font-size: 1rem !important;
-    }
+    /*.teamname {*/
+    /*    font-size: 1rem !important;*/
+    /*}*/
 
     .ed2logo {
         width: 80%;
@@ -751,13 +770,13 @@ span.button {
 }
 
 .faqTitle {
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
     font-weight: bold;
     margin-bottom: 4px;
 }
 
 .faqBody {
-    font-size: 0.95rem !important;
+    font-size: 0.8rem !important;
 }
 
 .textBlockCS {
@@ -827,4 +846,23 @@ span.button {
 
 .roadmap li {
     font-size: 1.1rem;
+}
+
+.textBlock.smallBlock {
+    padding: 12px 16px;
+    margin-bottom: 8px;
+}
+
+.faqTitle i {
+    font-size: 1.4rem;
+}
+
+
+#footer .item {
+    margin: 0 8px;
+}
+
+.socialLinks2 a.item {
+    margin: 0 2px !important;
+    padding: 0 6px !important;
 }

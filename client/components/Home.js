@@ -41,7 +41,7 @@ export default class Home extends Base {
         <Row>
           <Col className={'centered'}>
             <Scroll.Element name='intro'>
-              <img src={'/images/everDragons2Logo.png'} className={'ed2logo'}/>
+              <img src={'/images/Everdragons2Logo.png'} className={'ed2logo'}/>
               {/*<img src={'/images/everDragons2Logo2.png'} className={'ed2logo'}/>*/}
             </Scroll.Element>
           </Col>
@@ -64,20 +64,11 @@ export default class Home extends Base {
 
       <div className="bg1">
       <Container>
-        <Art
-          Store={this.Store}
-          setStore={this.setStore}
-        />
+        {/*<Art*/}
+        {/*  Store={this.Store}*/}
+        {/*  setStore={this.setStore}*/}
+        {/*/>*/}
 
-        <FAQ
-          Store={this.Store}
-          setStore={this.setStore}
-        />
-      </Container>
-      </div>
-
-      <div className="bg2">
-      <Container>
         <Roadmap
           Store={this.Store}
           setStore={this.setStore}
@@ -87,6 +78,25 @@ export default class Home extends Base {
           Store={this.Store}
           setStore={this.setStore}
         />
+      </Container>
+      </div>
+
+      <div className="bg2">
+      <Container>
+
+
+
+        <FAQ
+          Store={this.Store}
+          setStore={this.setStore}
+        />
+
+        <Team
+          Store={this.Store}
+          setStore={this.setStore}
+        />
+
+        <div style={{height: 24}}>{' '}</div>
 
         {/*<Drops*/}
         {/*  Store={this.Store}*/}
@@ -97,10 +107,6 @@ export default class Home extends Base {
 
       <div className="bg3">
       <Container style={{marginBottom: 50}}>
-        <Team
-          Store={this.Store}
-          setStore={this.setStore}
-        />
 
         {/*<ED*/}
         {/*  Store={this.Store}*/}

@@ -1,6 +1,6 @@
-# EverDragons2 NFT Project
+# Everdragons2 NFT Project
 
-**EverDragons2** Dapp at [https://everdragons2.com](https://everdragons2.com)
+**Everdragons2** Dapp at [https://everdragons2.com](https://everdragons2.com)
 
 ## Installation
 
