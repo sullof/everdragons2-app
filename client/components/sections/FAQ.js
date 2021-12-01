@@ -48,7 +48,7 @@ export default class FAQ extends Base {
         <span>Each new EverDragon is an ERC-721 token. Metadata and images will be served by EverDragons2, but their consistency and immutability are guaranteed using OpenTimestamp.org (timestamps on Bitcoin).</span>],
 
       ['Any advantage for original EverDragons holders?',
-        <span>Definitely yes. Holders of the original dragons can claim as many ED2s for free as many original EDs they hold on Ethereum, Tron, and/or POA Network.</span>],
+        <span>Definitely yes. Holders of the original dragons can claim as many Everdragons2 as they hold in the form of original Everdragons in Ethereum, Tron, and/or POA Network.</span>],
 
       ['Where can I purchase the original EverDragons?',
         <span>The best place to go is OpenSea. Look at the <Ab link={'https://opensea.io/collection/everdragons'}
