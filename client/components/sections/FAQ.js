@@ -33,22 +33,22 @@ export default class FAQ extends Base {
 
       ['Where will the new dragons live?',
         <span>Maybe Ethereum. But it could be Polygon, due to the high gas costs on Ethereum.
-          Anyway, special free drops will follow on Polygon PoS.</span>],
+          Anyway, special free drops will follow on Polygon Proof-of-Stake.</span>],
 
       ['How much will a new EverDragon cost?',
         <span>Anything from 1.8 ETH when the sale starts down to 0.07 ETH after 32h. The price will drop by 10% every hour (Dutch auction). Early community members will have discounts.</span>],
 
       ['What makes a new EverDragon rare?',
-        <span>First, the dragon's purity. There are 8 pure dragons, 24 dragons of the 2nd generation, 96 dragons of the 3rd generation, etc. In addition, dragons have 123 rarity attributes like jewels, fancy clothing, particular wings or tails. The also have auras and background skies. Finally, there are some exceptional dragons... you\'ll see :-)</span>],
+        <span>First, the dragon's purity. There are 8 pure dragons, 24 dragons of the 2nd generation, 96 dragons of the 3rd generation, etc. In addition, dragons have 123 rarity attributes like jewels, fancy clothing, particular wings or tails. The also have auras and background skies. Finally, there are some exceptional dragons... you'll see 🙂</span>],
 
       ['How do I buy a new EverDragon?',
-        <span>The new EverDragons will be available for purchase directly on this website when the sale starts. You will need to have wallet like Metamask and ETH in your wallet. Then, simply connect your wallet and select the number of dragons you want to mint.</span>],
+        <span>The new Everdragons will be available for purchase directly on this website when the sale starts. You will need to have wallet like Metamask, connect to the Polygon network and select the number of dragons you want to mint.</span>],
 
       ['What type of token are the new EverDragons?',
         <span>Each new EverDragon is an ERC-721 token. Metadata and images will be served by EverDragons2, but their consistency and immutability are guaranteed using OpenTimestamp.org (timestamps on Bitcoin).</span>],
 
       ['Any advantage for original EverDragons holders?',
-        <span>Definitely yes. Holders of the original dragons can claim as many ED2s for free as many original EDs they hold on Ethereum, Tron, and/or POA Network.</span>],
+        <span>Definitely yes. Holders of the original dragons can claim as many Everdragons2 as they hold in the form of original Everdragons in Ethereum, Tron, and/or POA Network.</span>],
 
       ['Where can I purchase the original EverDragons?',
         <span>The best place to go is OpenSea. Look at the <Ab link={'https://opensea.io/collection/everdragons'}

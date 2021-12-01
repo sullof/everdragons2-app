@@ -106,7 +106,7 @@ export default class Intro extends Base {
         <Row>
           <Col>
             <div className={'textBlock'}>
-              EverDragons2 is a collection of 10001 dragons randomly generated from hundreds of assets. Historically, 1332 unique EverDragons were minted in 2018 among Ethereum, POA Network, and Tron. Back then, the owners could move their dragons <span className={'bold'}>across blockchains and play a variety of games</span>. Like the originals, the new EverDragons will all have unique DNA, be collectible, and safely stored on the blockchain as ERC-721 Tokens.
+              Everdragons2 is a collection of 10,001 dragons randomly generated from hundreds of assets. They inherit the legacy of Everdragons, minted in 2018 as the first bridgeable cross-chain non-fungible token (NFT)  for gaming. In the marvelous upcoming Origins, the play-to-earn game of the Everdragons Metaverse, holders of Everdragons2 will get a Loot Box containing Obsidian (the Origins token), Settlement Plans, and Genesis Units based on rarity.
             </div>
           </Col>
         </Row>
