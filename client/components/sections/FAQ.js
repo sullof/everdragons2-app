@@ -39,7 +39,7 @@ export default class FAQ extends Base {
         <span>Anything from 1.8 ETH when the sale starts down to 0.07 ETH after 32h. The price will drop by 10% every hour (Dutch auction). Early community members will have discounts.</span>],
 
       ['What makes a new EverDragon rare?',
-        <span>First, the dragon's purity. There are 8 pure dragons, 24 dragons of the 2nd generation, 96 dragons of the 3rd generation, etc. In addition, dragons have 123 rarity attributes like jewels, fancy clothing, particular wings or tails. The also have auras and background skies. Finally, there are some exceptional dragons... you\'ll see :-)</span>],
+        <span>First, the dragon's purity. There are 8 pure dragons, 24 dragons of the 2nd generation, 96 dragons of the 3rd generation, etc. In addition, dragons have 123 rarity attributes like jewels, fancy clothing, particular wings or tails. The also have auras and background skies. Finally, there are some exceptional dragons... you'll see 🙂</span>],
 
       ['How do I buy a new EverDragon?',
         <span>The new EverDragons will be available for purchase directly on this website when the sale starts. You will need to have wallet like Metamask and ETH in your wallet. Then, simply connect your wallet and select the number of dragons you want to mint.</span>],
