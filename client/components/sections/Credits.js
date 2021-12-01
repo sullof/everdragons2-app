@@ -18,7 +18,7 @@ export default class ED extends Base {
   }
 
   render() {
-    const text = `EverDragons2 is a project by 'ndujaLabs, a laboratory for decentralized project.`
+    const text = `EverDragons2 is a project by 'ndujaLabs, a laboratory for decentralized projects.`
     return (
       <div className={'home-section'}>
         {/*<Scroll.Element name='credits'><h1>Credits</h1></Scroll.Element>*/}
