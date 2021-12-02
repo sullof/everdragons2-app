@@ -12,7 +12,7 @@ class Auth {
     const msgParams = JSON.stringify({
       domain: {
         chainId: chainId,
-        name: 'EverDragons2 NFT',
+        name: 'Everdragons2 NFT',
         version: '1',
       },
       message: {

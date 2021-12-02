@@ -21,7 +21,7 @@ export default class Sale extends Base {
 
   render() {
     const text = `
-EverDragons2 will use a Dutch Auction.
+Everdragons2 will use a Dutch Auction.
 
 This will avoid gas war and a fair distribution for the community.
 
@@ -36,7 +36,7 @@ The sale will happen some day to be defined around December 15th.
       <Row>
           <Col>
             <div className={'textBlock smallBlock'}>
-              <Ab link={'https://hackernoon.com/rediscovering-the-everdragons-the-first-cross-chain-nfts'} label={'Rediscovering the EverDragons, the First Cross-Chain NFTs'}/>
+              <Ab link={'https://hackernoon.com/rediscovering-the-everdragons-the-first-cross-chain-nfts'} label={'Rediscovering the Everdragons, the First Cross-Chain NFTs'}/>
             </div>
           </Col>
       </Row>

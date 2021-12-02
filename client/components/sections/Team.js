@@ -46,7 +46,8 @@ const team = {
       nickname: 'Yolar',
       telegram: 'LKK153',
       discord: 'LukeKK#1254',
-      linkedin: 'lukekim153'
+      linkedin: 'lukekim153',
+      twitter: 'lukekim153'
     },
     {
       nickname: 'Jormungandr',
@@ -135,7 +136,10 @@ export default class Team extends Base {
 
     return (
       <div className={'home-section'}>
-        <Scroll.Element name='team'><h1>The Dragons Riders</h1></Scroll.Element>
+        {/*<div className={'textBlock centered'}>*/}
+        {/*  <img src={'/images/team2.png'} alt={'the team'} style={{width: '100%'}}/>*/}
+        {/*</div>*/}
+        <Scroll.Element name='team'><h1>Dragons Riders</h1></Scroll.Element>
         <Row className={'dragons-show'}>
           {this.teamMember('0', 0)}
           {this.teamMember('0', 1)}
@@ -146,7 +150,7 @@ export default class Team extends Base {
           {this.teamMember('0', 4)}
           {this.teamMember('0', 5)}
         </Row>
-        <div className={'centered'}><Scroll.Element><h1>The Dragons Forgers</h1></Scroll.Element></div>
+        <div className={'centered'}><Scroll.Element><h1>Dragons Forgers</h1></Scroll.Element></div>
         {/*<div className={'centrato'}>*/}
           <Row className={'dragons-show'}>
             {this.teamMember('1', 0)}

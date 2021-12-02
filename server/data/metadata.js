@@ -9,9 +9,9 @@ class Metadata {
       throw new Error('Serial not found')
     }
     return {
-      description: 'EverDragons2 NFT Limited Edition',
+      description: 'Everdragons2 NFT Limited Edition',
       external_url: `https://everdragons2.com/items/${id}`,
-      name: `EverDragons2 ${id < 51
+      name: `Everdragons2 ${id < 51
         ? 'NE ' + id + '/50'
         : id === 88
           ? 'AC (xi)'

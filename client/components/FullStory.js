@@ -21,14 +21,14 @@ export default class FullStory extends Base {
 
 They’d been traveling alone for hundreds of years through deep space when they finally saw signs of life. A planet with only ten thousand humanoids, and kittens growing uncontrolled.
 
-The [EverDragons](https://everdragons.com) landed in June 2018. A group of one thousand explorers settled on the northern part of the planet to recover from the strenuous voyage. Or so they hoped. An even bigger catastrophe was about to threaten their existence. Crypto winter was coming.
+The [Everdragons](https://everdragons.com) landed in June 2018. A group of one thousand explorers settled on the northern part of the planet to recover from the strenuous voyage. Or so they hoped. An even bigger catastrophe was about to threaten their existence. Crypto winter was coming.
 
 `
     const long0 = `### 2018
 
 They’d been traveling alone for hundreds of years through deep space when they finally saw signs of life. A planet with only ten thousand humanoids, and kittens growing uncontrolled.
 
-The EverDragons landed in June 2018. A group of one thousand explorers settled on the northern part of the planet to recover from the strenuous voyage. Or so they hoped. An even bigger catastrophe was about to threaten their existence. Crypto winter was coming.
+The Everdragons landed in June 2018. A group of one thousand explorers settled on the northern part of the planet to recover from the strenuous voyage. Or so they hoped. An even bigger catastrophe was about to threaten their existence. Crypto winter was coming.
 `
     const long1 = `
 It didn't take long for the dragons to get used to a new lifestyle on this rich planet. When temperatures started to drop, the youngest dragons were simply too spoiled with feasts and engaged in battles to notice, and soon they started to fall into a deep slumber that could last forever.
@@ -40,7 +40,7 @@ The elders saw what was happening and regrouped to call for help from home. The 
 
 For the first time in history, an explorer came back to the home planet. The purest nobles from the family of Fire were rapidly summoned to hear their report: a liveable planet was found, and less than two years away... It was time for a long-deserved new beginning.
 
-The EverDragons had been inhabiting their home planet for almost fifty thousand years. In the beginning it was war to gain supremacy against other species, then it was war amongst families for an egotistical desire for power, and finally war against nature and scarcity of resources. The dragons gained longevity, but always struggled to survive. Every century or so a new crazy leader, a new illness, a new unstable environment was challenging their existence. What if they could start from fresh?
+The Everdragons had been inhabiting their home planet for almost fifty thousand years. In the beginning it was war to gain supremacy against other species, then it was war amongst families for an egotistical desire for power, and finally war against nature and scarcity of resources. The dragons gained longevity, but always struggled to survive. Every century or so a new crazy leader, a new illness, a new unstable environment was challenging their existence. What if they could start from fresh?
 
 A group of philosophers and world leaders developed a plan for a new start. Two of the purest dragons from the four families of Fire, Air, Water and Earth. Six pure descendants from each family and a total of ninety six nobles from the combined families. This would serve as the elite, leading another ten thousand or so dragons that would settle in the new world, relaunching their society, developing new art and technology, in full respect of each other, other species, and the natural resources at their disposal. With this plan in mind, they began sending explorers across the galaxies, in the hope to find a habitable planet.
 
@@ -49,14 +49,14 @@ Listening to the explorer's report, the nobles from the pure family of Fire had 
     const long3 = `
 ### Today
 
-Three years have passed since the EverDragons' landing. After a strenuous winter and a widespread pandemic, life is reemerging stronger than ever: kittens, apes and so many new forms and colors. And yet the dragons are still asleep, imprisoned in ice and snow.
+Three years have passed since the Everdragons' landing. After a strenuous winter and a widespread pandemic, life is reemerging stronger than ever: kittens, apes and so many new forms and colors. And yet the dragons are still asleep, imprisoned in ice and snow.
 
-A new bright light appears in the center of the sky. The spaceship is getting closer. New EverDragons are about to land.
+A new bright light appears in the center of the sky. The spaceship is getting closer. New Everdragons are about to land.
 `
     return (
       <Container style={{marginTop: 100, marginBottom: 120}}>
         <div className={'home-section'}>
-          <h1>The story</h1>
+          <h1>story</h1>
           <Row>
             <Col>
               <div className={'textBlock'}>
@@ -75,7 +75,7 @@ A new bright light appears in the center of the sky. The spaceship is getting cl
                   <div style={{height: 24, clear: 'both'}}>{' '}</div>
                   <CenteredImage src={'/images/everDragonsLogo.png'} />
                   <div className={'centered'}>
-                    <h2 className={'likeh1'}>Welcome the EverDragons2!</h2>
+                    <h2 className={'likeh1'}>Welcome the Everdragons2!</h2>
                   </div>
                 </div>
               </div>

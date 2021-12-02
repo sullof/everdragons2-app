@@ -20,14 +20,14 @@ export default class ED extends Base {
   }
 
   render() {
-    const text = `Deployed and minted on Ethereum in July 2018, [EverDragons](https://everdragons.com)
+    const text = `Deployed and minted on Ethereum in July 2018, [Everdragons](https://everdragons.com)
 also was the first NFT ever on Tron with a bridge that allowed users
 to move their dragons from one chain to another, among Ethereum, Tron, and POA Network.
 They represent a strong belief in decentralized technology and have
 pushed the technical boundaries on multiple fronts.`
     return (
       <div className={'home-section'}>
-      <Scroll.Element name='ed'><h1>The EverDragons original project</h1></Scroll.Element>
+      <Scroll.Element name='ed'><h1>The Everdragons original project</h1></Scroll.Element>
       <Row>
           <Col>
             <div className={'textBlock'}>
