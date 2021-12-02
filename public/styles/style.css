@@ -79,6 +79,7 @@ body {
     color: #000;
     font-family: 'Merriweather', serif;
     font-size: 1rem;
+    border: 12px solid white;
 }
 
 .bigLogo {
@@ -691,7 +692,7 @@ span.button {
 }
 
 .pl20p {
- padding-left: 100px !important;
+    padding-left: 100px !important;
 }
 
 .pr20p {
@@ -854,4 +855,14 @@ span.button {
 
 .faqTitle i {
     font-size: 1.4rem;
+}
+
+
+#footer .item {
+    margin: 0 8px;
+}
+
+.socialLinks2 a.item {
+    margin: 0 2px !important;
+    padding: 0 6px !important;
 }

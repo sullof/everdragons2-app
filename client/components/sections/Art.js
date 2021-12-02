@@ -21,10 +21,10 @@ export default class Art extends Base {
   }
 
   render() {
-    const text = `The EverDragons were designed back in 2017-2018. The new collection reuses the original assets to preserve the integrity of the project. The illustrator Ruben Gonzalez drew the original series. Jacqueline Hardy, starting from that, has worked on the images to produce variations, new elements, and unique dragons. Among the improvements she made, many highlight rarity attributes that weren't easy to spot in the first set.`
+    const text = `The Everdragons were designed back in 2017-2018. The new collection reuses the original assets to preserve the integrity of the project. The illustrator Ruben Gonzalez drew the original series. Jacqueline Hardy, starting from that, has worked on the images to produce variations, new elements, and unique dragons. Among the improvements she made, many highlight rarity attributes that weren't easy to spot in the first set.`
     return (
       <div className={'home-section'}>
-      <Scroll.Element name='art'><h1>The Art</h1></Scroll.Element>
+      <Scroll.Element name='art'><h1>Art</h1></Scroll.Element>
       <Row>
           <Col>
             <div className={'textBlock'}>

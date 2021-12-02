@@ -8,7 +8,7 @@ class Base extends Common {
   constructor(props) {
     super(props)
     this.bindMany([
-      'setStore',
+      'store',
       'request',
       'setTimeout',
       'endTimeout'
@@ -20,7 +20,7 @@ class Base extends Common {
     return clientApi.request(api, method, params, query)
   }
 
-  setStore(...params) {
+  store(...params) {
     this.props.setStore(...params)
   }
 

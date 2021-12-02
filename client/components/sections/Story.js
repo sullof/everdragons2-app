@@ -12,23 +12,23 @@ export default class Story extends Base {
 
   render() {
     const short = `
-### 2018
+It was 2018. They had been searching for years through hundreds of dimensions when they finally saw signs of life. A dimension with only ten thousand humanoid punks and kittens growing uncontrolled. This dimension was called Ethereum.
 
-They’d been traveling alone for hundreds of years through deep space when they finally saw signs of life. A planet with only ten thousand humanoids, and kittens growing uncontrolled.
+Three years have passed since the first Everdragons arrived in Ethereum in 2018. After a strenuous Crypto Winter and a widespread pandemic, life returns stronger than ever with kittens, apes, and many other creatures.
 
-The [EverDragons](https://everdragons.com) landed in June 2018. A group of one thousand explorers settled on the northern part of the planet to recover from the strenuous voyage. Or so they hoped. An even bigger catastrophe was about to threaten their existence. Crypto winter was coming.
+As for the Everdragons, they are awakening from their icy slumber. The second group of Everdragons explorers, aptly named Everdragons2, are on their way to settle in nearby dimensions. Everdragons2 settled in their new dimension, Polygon, where with new technology they forged a permanent portal to their homeland.
 
 `
     return (
       <div className={'home-section'}>
-        <Scroll.Element name='story'><h1>The story</h1></Scroll.Element>
+        <Scroll.Element name='story'><h1>Story</h1></Scroll.Element>
       <Row>
           <Col>
             <div className={'textBlock'}>
               <Markdown source={short}/>
-              <div style={{marginTop: 12}}>
-                <Link to={'/story'}><b>[ Read the full story ]</b></Link>
-              </div>
+              {/*<div style={{marginTop: 12}}>*/}
+              {/*  <Link to={'/story'}><b>[ Read the full story ]</b></Link>*/}
+              {/*</div>*/}
             </div>
           </Col>
       </Row>

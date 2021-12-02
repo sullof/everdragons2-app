@@ -23,8 +23,13 @@ class Footer extends Base {
                  rel="noreferrer">
                 <i className="fab fa-discord" /> <span className="roboto300">Discord</span>
               </a>
+<a className="item"
+                 href={'https://medium.com/ndujalabs'}
+                 rel="noreferrer">
+                <i className="fab fa-medium" /> <span className="roboto300">Blog</span>
+              </a>
               {' '}
-              <span className={'noMobile'}>| This website uses 🍺s not 🍪s</span>
+              <span className={'noMobile'}>{' | '} This website uses 🍺s not 🍪s</span>
           </div>
 
         </div>
