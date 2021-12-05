@@ -25,9 +25,9 @@ Everdragons2 will use a Dutch Auction.
 
 It will avoid gas war and will generate a fair distribution among the community.
 
-The sale will start at an inflated price, decreasing by 10% every hour, reaching a floor after 32h.
+The sale will start at an inflated price, decreasing by 10% every hour, reaching a floor after 32 hours.
 
-The sale will happen someday around December 15th.
+The exact date is to be defined. But, it will most likely be around December 14th, at 1pm EST.
 `
 
     return (
