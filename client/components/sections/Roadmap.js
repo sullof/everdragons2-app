@@ -57,14 +57,24 @@ export default class Roadmap extends Base {
     return rows
   }
 
+  // <div className={'home-section'}>
+  //   <Scroll.Element name='roadmap'><h1>Roadmap</h1></Scroll.Element>
+  //   <div key={'key' + Math.random()} className={'textBlock roadmap'}>
+  //     {this.roadmapList()}
+  //   </div>
+  // </div>
 
   render() {
     return (
       <div className={'home-section'}>
         <Scroll.Element name='roadmap'><h1>Roadmap</h1></Scroll.Element>
-        <div key={'key' + Math.random()} className={'textBlock roadmap'}>
-          {this.roadmapList()}
-        </div>
+        <Row>
+            <Col>
+              <div className={'textBlock'} style={{ padding: 0 }}>
+                <img src="/images/roadmap.png" width="100%" />
+              </div>
+            </Col>
+        </Row>
       </div>
     )
   }
