@@ -68,9 +68,9 @@ router.get('/ed2-test/', async (req, res) => {
     // "seller_fee_basis_points": 250,
     // "fee_recipient": "...",
     "chains": {
-      "ethereum": "0x3b6aad76254a79a9e256c8aed9187dea505aad52",
-      "polygon": "0x0ece...",
-      "bsc": "0x0ece...",
+      "ethereum": "0x5647D16CaB593f330AcecF4c1E1029B16a692B0a",
+      "polygon": "0x9F4a371bc75C6D3D1DB73bA48E8185080d84B69F",
+      "bsc": "0x9F4a371bc75C6D3D1DB73bA48E8185080d84B69F",
       // "solana": "...",
     },
   })
