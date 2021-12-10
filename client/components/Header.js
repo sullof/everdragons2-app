@@ -152,6 +152,9 @@ export default class Header extends Base {
             {/*  spy={true} smooth={true} to='drops' onClick={this.setExpanded}>Drops</Scroll.Link>*/}
             <Scroll.Link
               offset={-80}
+              spy={true} smooth={true} to='origins' onClick={this.setExpanded}>Origins</Scroll.Link>
+            <Scroll.Link
+              offset={-80}
               spy={true} smooth={true} to='team' onClick={this.setExpanded}>Team</Scroll.Link>
             {/*<Scroll.Link*/}
             {/*  offset={-80}*/}
@@ -180,6 +183,11 @@ export default class Header extends Base {
              href={'https://discord.gg/AzfFnUjrnG'}
              rel="noreferrer">
             <i className="fab fa-discord" /> <span className="roboto300">Discord</span>
+          </a>
+          <a className="item"
+             href={'https://medium.com/ndujalabs'}
+             rel="noreferrer">
+            <i className="fab fa-medium" /> <span className="roboto300">Blog</span>
           </a>
         </Navbar.Text>
 
