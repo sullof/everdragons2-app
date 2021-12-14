@@ -16,6 +16,7 @@ import Sale from './sections/Sale'
 import TechStory from './sections/TechStory'
 import ED from './sections/ED'
 import Credits from './sections/Credits'
+import Origins from './sections/Origins'
 
 export default class Home extends Base {
 
@@ -86,6 +87,11 @@ export default class Home extends Base {
 
 
         <FAQ
+          Store={this.Store}
+          setStore={this.setStore}
+        />
+
+        <Origins
           Store={this.Store}
           setStore={this.setStore}
         />
