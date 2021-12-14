@@ -35,7 +35,7 @@ export default class FAQ extends Base {
         <span>Polygon Proof-of-Stake.</span>],
 
       ['How much will a new Everdragon cost?',
-        <span>Anything from 3000 Matic when the sale starts down to 200 Matic after 28 hours. The price will drop by 10% every hour (Dutch auction). Early community members will have discounts.</span>],
+        <span>Anything from 5000 Matic when the sale starts down to 200 Matic after 5 hours. The price will drop by 1% every minute (Dutch auction). Early community members will have discounts.</span>],
 
       ['What makes a new Everdragon rare?',
         <span>First, the dragon's purity. There are 8 pure dragons, 24 dragons of the 2nd generation, 96 dragons of the 3rd generation, etc. In addition, dragons have 123 rarity attributes like jewels, fancy clothing, particular wings or tails. The also have auras and background skies. Finally, there are some exceptional dragons... you'll see 🙂</span>],
