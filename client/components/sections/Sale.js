@@ -20,15 +20,6 @@ export default class Sale extends Base {
   }
 
   render() {
-    const text = `
-Everdragons2 will use a Dutch Auction.
-
-It will avoid gas war and will generate a fair distribution among the community.
-
-The sale will start at an inflated price, decreasing by 10% every hour, reaching a floor after 32 hours.
-
-The exact date is to be defined. But, it will most likely be around December 14th, at 1pm EST.
-`
 
     return (
       <div className={'home-section'}>
@@ -36,7 +27,13 @@ The exact date is to be defined. But, it will most likely be around December 14t
       <Row>
           <Col>
             <div className={'textBlock'}>
-              <Markdown source={text}/>
+              <p>Everdragons2 will use a Dutch Auction.</p>
+
+              <p>It will avoid gas war and will generate a fair distribution among the community.</p>
+
+              <p>The sale will start at an inflated price, decreasing by 10% every hour, reaching a floor after 32 hours.</p>
+
+              <p><Ab link={'https://medium.com/everdragons2/everdragons2-sale-on-polygon-ca04d32855d8'} label={'Read this blog post for more details.'}/></p>
             </div>
           </Col>
       </Row>
