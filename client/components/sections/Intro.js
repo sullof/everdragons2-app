@@ -111,25 +111,25 @@ export default class Intro extends Base {
           </Col>
         </Row>
 
-        <div className={'home-section'}>
-          <h1>Play Goldmine, Win Everdragons2</h1>
-        <Row>
-            <Col>
-              <div className={'textBlock'}>
-                <p>
-                  1. Go to <a href="https://discord.gg/8rHqANsM">#goldmine</a> on Discord and /register your address.
-                </p>
-                <p>
-                  2. Click the image below... enjoy!
-                </p>
+        {/*<div className={'home-section'}>*/}
+        {/*  <h1>Play Goldmine, Win Everdragons2</h1>*/}
+        {/*<Row>*/}
+        {/*    <Col>*/}
+        {/*      <div className={'textBlock'}>*/}
+        {/*        <p>*/}
+        {/*          1. Go to <a href="https://discord.gg/8rHqANsM">#goldmine</a> on Discord and /register your address.*/}
+        {/*        </p>*/}
+        {/*        <p>*/}
+        {/*          2. Click the image below... enjoy!*/}
+        {/*        </p>*/}
 
-                <a href="https://goldmine.everdragons2.com">
-                  <img src="/images/goldmine.png" width="100%" />
-                </a>
-              </div>
-            </Col>
-        </Row>
-        </div>
+        {/*        <a href="https://goldmine.everdragons2.com">*/}
+        {/*          <img src="/images/goldmine.png" width="100%" />*/}
+        {/*        </a>*/}
+        {/*      </div>*/}
+        {/*    </Col>*/}
+        {/*</Row>*/}
+        {/*</div>*/}
       </div>
     )
   }
