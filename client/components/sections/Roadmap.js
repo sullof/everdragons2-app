@@ -20,11 +20,14 @@ const roadmap = {
   ],
   'Dec 2021': [
     'Announcement of crypto-metaverse and in-game use cases and partnerships (e.g. decentralized finance (DeFi), play-to-earn)',
-    'NFT sales of 10,001 Everdragons2',
-    'Awarding of rare and special dragons with exclusive redeemable and collectible value'
+    'Goldmine game context',
+    'ARG#1 quest',
+    'Integrations of Wormhole native technology for cross-chain token bridging'
   ],
   'Q1/Q2 2022': [
+    'Airdrop of 500 Everdragons2 Genesis DAO tokens',
     'Building DeFi for staking/lending infrastructure',
+    'Everdragons2 tokens sale',
     'Decentralized autonomous organization (DAO) governance setup and first Community Treasury vote',
     'In-house development for Origins game',
     'Strategic partnerships to increase the redeemable value of each NFT for digital and physical goods and services'
