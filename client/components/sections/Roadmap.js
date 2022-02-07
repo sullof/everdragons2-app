@@ -25,11 +25,12 @@ const roadmap = {
     'Integrations of Wormhole native technology for cross-chain token bridging'
   ],
   'Q1/Q2 2022': [
-    'Airdrop of 500 Everdragons2 Genesis DAO tokens',
+    'Giveaways of 350 Everdragons2 Genesis Governance tokens to the community',
+    'Public sale of 250 Everdragons2 Genesis Governance tokens',
     'Building DeFi for staking/lending infrastructure',
-    'Everdragons2 tokens sale',
     'Decentralized autonomous organization (DAO) governance setup and first Community Treasury vote',
     'In-house development for Origins game',
+    'Public sale of 9401 Everdragons2 Genesis tokens',
     'Strategic partnerships to increase the redeemable value of each NFT for digital and physical goods and services'
   ],
   'Q3/Q4 2022': [

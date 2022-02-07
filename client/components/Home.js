@@ -74,17 +74,15 @@ export default class Home extends Base {
           setStore={this.setStore}
         />
 
-        <Sale
-          Store={this.Store}
-          setStore={this.setStore}
-        />
+        {/*<Sale*/}
+        {/*  Store={this.Store}*/}
+        {/*  setStore={this.setStore}*/}
+        {/*/>*/}
       </Container>
       </div>
 
       <div className="bg2">
       <Container>
-
-
 
         <FAQ
           Store={this.Store}
