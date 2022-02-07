@@ -141,9 +141,9 @@ export default class Header extends Base {
             <Scroll.Link
               offset={-80}
               spy={true} smooth={true} to='roadmap' onClick={this.setExpanded}>Roadmap</Scroll.Link>
-            <Scroll.Link
-              offset={-80}
-              spy={true} smooth={true} to='sale' onClick={this.setExpanded}>Sale</Scroll.Link>
+            {/*<Scroll.Link*/}
+            {/*  offset={-80}*/}
+            {/*  spy={true} smooth={true} to='sale' onClick={this.setExpanded}>Sale</Scroll.Link>*/}
             <Scroll.Link
               offset={-80}
               spy={true} smooth={true} to='faq' onClick={this.setExpanded}>FAQ</Scroll.Link>

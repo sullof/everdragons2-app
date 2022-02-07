@@ -27,27 +27,28 @@ export default class FAQ extends Base {
   faq() {
     const {expanded} = this.state
     const faqs = [
-      ['When are the new Everdragons dropping?',
-        <span>The exact date is to be defined. But, it will most likely be around December 14th, at 1pm EST.<br/>
+      ['When are the Everdragons2 Genesis tokens dropping?',
+        <span>The exact date is to be defined. But, it will in February 2022.<br/>
           Follow our <Ab link={'https://discord.gg/NJ8kHS4JZg'} label={'Discord'}/> to stay updated!</span>],
 
       ['Where will the new dragons live?',
-        <span>Polygon Proof-of-Stake.</span>],
+        <span>Polygon Proof-of-Stake (ex-MATIC Network).</span>],
 
-      ['How much will a new Everdragon cost?',
-        <span>Anything from 5000 Matic when the sale starts down to 200 Matic after 5 hours. The price will drop by 1% every minute (Dutch auction). Early community members will have discounts.</span>],
+      ['How much will a Everdragon2 Genesis DAO Token cost?',
+        <span>500 Matic.</span>],
 
-      ['What makes a new Everdragon rare?',
-        <span>First, the dragon's purity. There are 8 pure dragons, 24 dragons of the 2nd generation, 96 dragons of the 3rd generation, etc. In addition, dragons have 123 rarity attributes like jewels, fancy clothing, particular wings or tails. The also have auras and background skies. Finally, there are some exceptional dragons... you'll see 🙂</span>],
+      ['What makes an Everdragons2 rare?',
+        <span>There are two types of Everdragons2 tokens: Genesis DAO Tokens (600 items) and Genesis Tokens (9401).
+          For both, first, the dragon's purity. There are 8 pure dragons, 24 dragons of the 2nd generation, 96 dragons of the 3rd generation, etc. In addition, dragons have 123 rarity attributes like jewels, fancy clothing, particular wings or tails. The also have auras and background skies. Finally, in the Genesis tokens, there are some exceptional dragons... you'll see 🙂</span>],
 
-      ['How do I buy a new Everdragon?',
-        <span>The new Everdragons will be available for purchase directly on this website when the sale starts. You will need to have a wallet like Metamask, connect to the Polygon network and select the number of dragons you want to mint.</span>],
+      ['How do I buy Everdragons2?',
+        <span>The Everdragons2 will be available for purchase directly on this website when the sale starts. You will need to have a wallet like Metamask, connect to the Polygon network and select the number of dragons you want to mint.</span>],
 
-      ['What type of token are the new Everdragons?',
-        <span>Each new Everdragon is an ERC-721 token. Metadata and images will be served by Everdragons2, but their consistency and immutability are guaranteed (read <Ab label={'this blog post'} link={'https://medium.com/ndujalabs/everdragons2-fair-tokens-distribution-9c6f77c748f6'}/> for more details).</span>],
+      ['What type of token are the Everdragons2?',
+        <span>Each Everdragons2 is an ERC-721 token. Metadata and images will be served by Everdragons2, but their consistency and immutability are guaranteed (read <Ab label={'this blog post'} link={'https://medium.com/ndujalabs/everdragons2-fair-tokens-distribution-9c6f77c748f6'}/> for more details).</span>],
 
       ['Any advantage for original Everdragons holders?',
-        <span>Definitely yes. Holders of the original dragons can claim as many Everdragons2 as they hold in the form of original Everdragons in Ethereum, Tron, and/or POA Network.</span>],
+        <span>Definitely yes. During the final sale of the 9401 Genesis Tokens, holders of the original dragons can claim as many Everdragons2 Genesis tokens as they hold in the form of original Everdragons in Ethereum, Tron, and/or POA Network.</span>],
 
       ['Where can I purchase the original Everdragons?',
         <span>The best place to go is OpenSea. Look at the <Ab link={'https://opensea.io/collection/everdragons'}
