@@ -2,7 +2,7 @@
 const {Container, Row, Col, Carousel} = ReactBootstrap
 import * as Scroll from 'react-scroll'
 import Markdown from 'react-markdown-it'
-
+import Ab from '../Ab'
 
 import Base from '../Base'
 
@@ -84,6 +84,15 @@ export default class Intro extends Base {
     const {index} = this.state
     return (
       <div className={'home-section'}>
+        <Row>
+          <Col>
+            <div className={'textBlock centered'} style={{fontSize: '2rem'}}>
+              250 Everdragons2 Genesis Token are for sale!<br/>
+              <Ab link={'https://app.everdragons2.com'} label={'Visit app.everdragons2.com to get your E2GT'}/>
+
+            </div>
+          </Col>
+        </Row>
         <Carousel
           fade
           indicators={false}
