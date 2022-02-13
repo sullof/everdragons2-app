@@ -94,25 +94,45 @@ export default class Intro extends Base {
             </div>
           </Col>
         </Row>
-        <Carousel
-          fade
-          indicators={false}
-          nextLabel={''}
-          nextIcon={''}
-          prevLabel={''}
-          prevIcon={''}
-          activeIndex={index}
-          // onSelect={handleSelect}
-        >
-          {this.getFour(0)}
-          {this.getThree(2)}
-          {this.getFour(4)}
-          {this.getThree(1)}
-          {this.getFour(6)}
-          {this.getThree(3)}
-          {this.getFour(7)}
-          {this.getThree(5)}
-        </Carousel>
+        <Row>
+          <Col lg={4} xs={1}>
+            <img
+              className={"sneakpeak"}
+              src={"https://img.everdragons2.com/assets/animation1.gif"}
+            />
+          </Col>
+          <Col lg={4} xs={1}>
+            <img
+              className={"sneakpeak"}
+              src={"https://img.everdragons2.com/assets/animation2.gif"}
+            />
+          </Col>
+          <Col lg={4} xs={1}>
+            <img
+              className={"sneakpeak"}
+              src={"https://img.everdragons2.com/assets/animation3.gif"}
+            />
+          </Col>
+        </Row>
+        {/*<Carousel*/}
+        {/*  fade*/}
+        {/*  indicators={false}*/}
+        {/*  nextLabel={''}*/}
+        {/*  nextIcon={''}*/}
+        {/*  prevLabel={''}*/}
+        {/*  prevIcon={''}*/}
+        {/*  activeIndex={index}*/}
+        {/*  // onSelect={handleSelect}*/}
+        {/*>*/}
+        {/*  {this.getFour(0)}*/}
+        {/*  {this.getThree(2)}*/}
+        {/*  {this.getFour(4)}*/}
+        {/*  {this.getThree(1)}*/}
+        {/*  {this.getFour(6)}*/}
+        {/*  {this.getThree(3)}*/}
+        {/*  {this.getFour(7)}*/}
+        {/*  {this.getThree(5)}*/}
+        {/*</Carousel>*/}
         <Row>
           <Col>
             <div className={'textBlock'}>

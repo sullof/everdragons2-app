@@ -866,3 +866,8 @@ span.button {
     margin: 0 2px !important;
     padding: 0 6px !important;
 }
+
+.sneakpeak {
+    width: 100%;
+    margin-bottom: 24px;
+}
