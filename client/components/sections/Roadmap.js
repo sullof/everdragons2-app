@@ -26,11 +26,11 @@ const roadmap = {
   ],
   'Q1/Q2 2022': [
     'Giveaways of 350 Everdragons2 Genesis Governance tokens to the community',
-    'Public sale of 250 Everdragons2 Genesis Governance tokens',
+    'Public sale of 650 Everdragons2 Genesis Governance tokens',
     'Building DeFi for staking/lending infrastructure',
     'Decentralized autonomous organization (DAO) governance setup and first Community Treasury vote',
     'In-house development for Origins game',
-    'Public sale of 9401 Everdragons2 Genesis tokens',
+    'Public sale of 9001 Everdragons2 Genesis tokens',
     'Strategic partnerships to increase the redeemable value of each NFT for digital and physical goods and services'
   ],
   'Q3/Q4 2022': [

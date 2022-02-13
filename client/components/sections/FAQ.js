@@ -34,11 +34,11 @@ export default class FAQ extends Base {
       ['Where will the new dragons live?',
         <span>Polygon Proof-of-Stake (ex-MATIC Network).</span>],
 
-      ['How much will a Everdragon2 Genesis DAO Token cost?',
-        <span>500 Matic.</span>],
+      ['How much will a Everdragon2 Governance Genesis Token cost?',
+        <span>100 Matic.</span>],
 
       ['What makes an Everdragons2 rare?',
-        <span>There are two types of Everdragons2 tokens: Genesis DAO Tokens (600 items) and Genesis Tokens (9401).
+        <span>There are two types of Everdragons2 tokens: Governance Genesis Tokens (1000 items) and Genesis Tokens (9001).
           For both, first, the dragon's purity. There are 8 pure dragons, 24 dragons of the 2nd generation, 96 dragons of the 3rd generation, etc. In addition, dragons have 123 rarity attributes like jewels, fancy clothing, particular wings or tails. The also have auras and background skies. Finally, in the Genesis tokens, there are some exceptional dragons... you'll see 🙂</span>],
 
       ['How do I buy Everdragons2?',
@@ -48,7 +48,7 @@ export default class FAQ extends Base {
         <span>Each Everdragons2 is an ERC-721 token. Metadata and images will be served by Everdragons2, but their consistency and immutability are guaranteed (read <Ab label={'this blog post'} link={'https://medium.com/ndujalabs/everdragons2-fair-tokens-distribution-9c6f77c748f6'}/> for more details).</span>],
 
       ['Any advantage for original Everdragons holders?',
-        <span>Definitely yes. During the final sale of the 9401 Genesis Tokens, holders of the original dragons can claim as many Everdragons2 Genesis tokens as they hold in the form of original Everdragons in Ethereum, Tron, and/or POA Network.</span>],
+        <span>Definitely yes. During the final sale of the 9001 Genesis Tokens, holders of the original dragons can claim as many Everdragons2 Genesis tokens as they hold in the form of original Everdragons in Ethereum, Tron, and/or POA Network.</span>],
 
       ['Where can I purchase the original Everdragons?',
         <span>The best place to go is OpenSea. Look at the <Ab link={'https://opensea.io/collection/everdragons'}

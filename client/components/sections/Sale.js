@@ -27,7 +27,7 @@ export default class Sale extends Base {
       <Row>
           <Col>
             <div className={'textBlock'}>
-              <p>Everdragons2 Genesis Governance tokens will sell on this app for a fixed price of 500 MATIC.</p>
+              <p>Everdragons2 Genesis Governance tokens will sell on this app for a fixed price of 100 MATIC.</p>
 
               {/*<p>It will avoid gas war and will generate a fair distribution among the community.</p>*/}
 
