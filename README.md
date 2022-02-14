@@ -28,7 +28,7 @@ pnpm run build
 pnpm run start
 ```
 
-and connect to [http://localhost:6660](http://localhost:6660).~~~~
+and connect to [http://localhost:6660](http://localhost:6660).
 
 ## Copyright
 
