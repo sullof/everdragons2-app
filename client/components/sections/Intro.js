@@ -88,7 +88,7 @@ export default class Intro extends Base {
         <Row>
           <Col>
             <div className={'textBlock centered'} style={{fontSize: '2rem'}}>
-              Everdragons2 Genesis Token are for sale!<br/>
+              Everdragons2 Genesis tokens are for sale!<br/>
               <Ab link={'https://app.everdragons2.com'} label={'Visit app.everdragons2.com to get your E2GT'}/>
 
             </div>
