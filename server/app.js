@@ -49,6 +49,7 @@ app.use('/:anything', function (req, res, next) {
     case 'images':
     case 'dragons':
     case 'bundle':
+    case 'logo.png':
       next()
       break
     default:
