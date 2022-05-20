@@ -114,8 +114,6 @@ export default class Header extends Base {
       }
     }
 
-    console.log(this.state.pathname)
-
     return <Navbar expanded={expanded}  fixed="top" bg="light" expand="lg" className={'roboto'}>
       <Navbar.Brand href="/"><img src={'/images/everDragons2Icon.png'} style={{height: 40}}/></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav"
