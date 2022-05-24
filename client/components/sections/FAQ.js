@@ -28,7 +28,7 @@ export default class FAQ extends Base {
     const {expanded} = this.state
     const faqs = [
       ['When are the Everdragons2 Genesis tokens dropping?',
-        <span>The exact date is to be defined. But, it will in February 2022.<br/>
+        <span>184 genesis tokens have been sold in April. The remaining genesis tokens (won during the Goldmine contest, the ARG, etc.) will be airdropped on the same contract on May 26th.<br/>
           Follow our <Ab link={'https://discord.gg/NJ8kHS4JZg'} label={'Discord'}/> to stay updated!</span>],
 
       ['Where will the new dragons live?',

@@ -59,16 +59,28 @@ body {
     /*background-attachment: fixed;*/
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    max-height: 280px;
+    background-size: 150%;
+    background-position-y: -32px;
+}
+
+.distanziatore {
+    height: 146px;
 }
 
 .teamname {
-    margin-top: -25px;
+    /*margin-top: -25px;*/
+    font-size: 1.3rem;
 }
 
 .teamMember .socialLinks {
     margin: 0 6px;
     display: inline;
+}
+
+.socials {
+    margin-top: -5px;
+    font-size: 1rem !important;
 }
 
 /*.navbar-toggler.collapsed {*/
@@ -735,9 +747,27 @@ span.button {
 }
 
 @media (max-width: 990px) {
-    /*.teamname {*/
-    /*    font-size: 1rem !important;*/
-    /*}*/
+    .teamname {
+        font-size: 1.4rem !important;
+    }
+
+        .distanziatore {
+            height: 130px;
+        }
+
+    .teamMember {
+        background-size: 160%;
+        background-position-y: -28px;
+        max-height: 216px;
+    }
+
+    .dragons-show .textBlock {
+        padding: 0;
+    }
+
+    .socials {
+        font-size: 1rem !important;
+    }
 
     .ed2logo {
         width: 80%;

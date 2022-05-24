@@ -85,54 +85,54 @@ export default class Intro extends Base {
     const {index} = this.state
     return (
       <div className={'home-section'}>
-        <Row>
-          <Col>
-            <div className={'textBlock centered'} style={{fontSize: '2rem'}}>
-              Everdragons2 Genesis tokens are for sale!<br/>
-              <Ab link={'https://app.everdragons2.com'} label={'Visit app.everdragons2.com to get your E2GT'}/>
+        {/*<Row>*/}
+        {/*  <Col>*/}
+        {/*    <div className={'textBlock centered'} style={{fontSize: '2rem'}}>*/}
+        {/*      Everdragons2 Genesis tokens are for sale!<br/>*/}
+        {/*      <Ab link={'https://app.everdragons2.com'} label={'Visit app.everdragons2.com to get your E2GT'}/>*/}
 
-            </div>
-          </Col>
-        </Row>
-        <Row>
-          <Col lg={4} xs={1}>
-            <img
-              className={"sneakpeak"}
-              src={"https://img.everdragons2.com/assets/animation1.gif"}
-            />
-          </Col>
-          <Col lg={4} xs={1}>
-            <img
-              className={"sneakpeak"}
-              src={"https://img.everdragons2.com/assets/animation2.gif"}
-            />
-          </Col>
-          <Col lg={4} xs={1}>
-            <img
-              className={"sneakpeak"}
-              src={"https://img.everdragons2.com/assets/animation3.gif"}
-            />
-          </Col>
-        </Row>
-        {/*<Carousel*/}
-        {/*  fade*/}
-        {/*  indicators={false}*/}
-        {/*  nextLabel={''}*/}
-        {/*  nextIcon={''}*/}
-        {/*  prevLabel={''}*/}
-        {/*  prevIcon={''}*/}
-        {/*  activeIndex={index}*/}
-        {/*  // onSelect={handleSelect}*/}
-        {/*>*/}
-        {/*  {this.getFour(0)}*/}
-        {/*  {this.getThree(2)}*/}
-        {/*  {this.getFour(4)}*/}
-        {/*  {this.getThree(1)}*/}
-        {/*  {this.getFour(6)}*/}
-        {/*  {this.getThree(3)}*/}
-        {/*  {this.getFour(7)}*/}
-        {/*  {this.getThree(5)}*/}
-        {/*</Carousel>*/}
+        {/*    </div>*/}
+        {/*  </Col>*/}
+        {/*</Row>*/}
+        {/*<Row>*/}
+        {/*  <Col lg={4} xs={1}>*/}
+        {/*    <img*/}
+        {/*      className={"sneakpeak"}*/}
+        {/*      src={"https://img.everdragons2.com/assets/animation1.gif"}*/}
+        {/*    />*/}
+        {/*  </Col>*/}
+        {/*  <Col lg={4} xs={1}>*/}
+        {/*    <img*/}
+        {/*      className={"sneakpeak"}*/}
+        {/*      src={"https://img.everdragons2.com/assets/animation2.gif"}*/}
+        {/*    />*/}
+        {/*  </Col>*/}
+        {/*  <Col lg={4} xs={1}>*/}
+        {/*    <img*/}
+        {/*      className={"sneakpeak"}*/}
+        {/*      src={"https://img.everdragons2.com/assets/animation3.gif"}*/}
+        {/*    />*/}
+        {/*  </Col>*/}
+        {/*</Row>*/}
+        <Carousel
+          fade
+          indicators={false}
+          nextLabel={''}
+          nextIcon={''}
+          prevLabel={''}
+          prevIcon={''}
+          activeIndex={index}
+          // onSelect={handleSelect}
+        >
+          {this.getFour(0)}
+          {this.getThree(2)}
+          {this.getFour(4)}
+          {this.getThree(1)}
+          {this.getFour(6)}
+          {this.getThree(3)}
+          {this.getFour(7)}
+          {this.getThree(5)}
+        </Carousel>
         <Row>
           <Col>
             <div className={'textBlock'}>

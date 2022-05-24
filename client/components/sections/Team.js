@@ -42,25 +42,22 @@ const team = {
       linkedin: 'davidedicillo'
     },
     {
-      name: 'Luke Kim',
-      nickname: 'Yolar',
-      telegram: 'LKK153',
-      discord: 'LukeKK#1254',
-      linkedin: 'lukekim153',
-      twitter: 'lukekim153'
-    },
-    {
-      nickname: 'Jormungandr',
-    },
+      name: 'Tšepiso Isabella Mokobori',
+      nickname: 'Hyacinth',
+      twitter: '_MissPurple__',
+      telegram: 'misspurrplee',
+      discord: 'Miss Purple 💜#0919',
+      linkedin: 'tšepiso-isabella-mokobori-27ba53116'
+    }
   ],
   '1': [
     {
-      name: 'Patrick Rieger',
-      nickname: 'Patrick',
-      twitter: 'PatrickWRieger',
-      telegram: 'PatrickWR',
-      discord: 'PatrickWR#4682',
-      linkedin: 'patrickwr'
+      name: 'Marc Scherer',
+      nickname: 'Marc',
+      twitter: 'sullof',
+      telegram: 'MarcS502',
+      discord: 'MarcS#6174\n',
+      linkedin: 'marc-scherer'
     },
     {
       name: 'Jacqueline Hardy',
@@ -71,13 +68,13 @@ const team = {
       linkedin: 'jacquelinemh'
     },
     {
-      name: 'Marc Scherer',
-      nickname: 'Marc',
-      twitter: 'sullof',
-      telegram: 'MarcS502',
-      discord: 'MarcS#6174\n',
-      linkedin: 'marc-scherer'
-    },
+      name: 'Patrick Rieger',
+      nickname: 'Patrick',
+      twitter: 'PatrickWRieger',
+      telegram: 'PatrickWR',
+      discord: 'PatrickWR#4682',
+      linkedin: 'patrickwr'
+    }
   ],
 }
 
@@ -109,24 +106,19 @@ export default class Team extends Base {
 
   teamMember(group, index) {
     const member = team[group][index]
-    return <Col xs={12} lg={4}>
-      <div className={'textBlock teamMember'} style={{backgroundImage: `url(/images/team/${member.nickname}.png)`}}>
-        {/*<Ab label={<img src={'/images/avatars.png'}/>}*/}
-        {/*    link={'https://opensea.io/assets/0x772da237fc93ded712e5823b497db5991cc6951e/206'}/>*/}
-
+    return <Col xs={6} lg={3}>
+      <div className={'textBlock teamMember'} style={{
+        backgroundImage: `url(/images/team/${member.nickname}.png)`
+      }}>
+        <div className={'distanziatore'}>{' '}</div>
         <div className={'centered teamname'}>{member.nickname}</div>
-        <div style={{height: 240}}>{' '}</div>
-        <div className={'centered'}>
+        <div className={'centered socials'}>
           {
             member.twitter ? <div className={'socialLinks'}><Ab link={'https://twitter.com/'+member.twitter} label={<i className="fab fa-twitter" />}/></div> : null
           }
           {
             member.linkedin ? <div className={'socialLinks'}><Ab link={'https://linkedin.com/in/'+member.linkedin} label={<i className="fab fa-linkedin" />}/></div> : <i className="fab fa-linkedin" style={{color: 'transparent'}}/>
           }
-          {/*{*/}
-          {/*  member.discord ? <div className={'socialLinks'}><Ab link={'https://discordapp.com/users/'+member.discord} label={<i className="fab fa-discord" />}/></div> : null*/}
-          {/*}*/}
-
         </div>
       </div>
     </Col>
@@ -144,15 +136,10 @@ export default class Team extends Base {
           {this.teamMember('0', 0)}
           {this.teamMember('0', 1)}
           {this.teamMember('0', 2)}
+          {this.teamMember('0', 3)}
         </Row>
         <Row className={'dragons-show'}>
-          {this.teamMember('0', 3)}
           {this.teamMember('0', 4)}
-          {this.teamMember('0', 5)}
-        </Row>
-        <div className={'centered'}><Scroll.Element><h1>Dragons Forgers</h1></Scroll.Element></div>
-        {/*<div className={'centrato'}>*/}
-          <Row className={'dragons-show'}>
             {this.teamMember('1', 0)}
             {this.teamMember('1', 1)}
             {this.teamMember('1', 2)}
