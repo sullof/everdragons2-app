@@ -51,9 +51,9 @@ export default class FAQ extends Base {
         <span>Definitely yes. During the final sale of the 9401 Genesis Tokens, holders of the original dragons can claim as many Everdragons2 Genesis tokens as they hold in the form of original Everdragons in Ethereum, Tron, and/or POA Network.</span>],
 
       ['Where can I purchase Everdragons2 Genesis tokens??',
-        <span>The best place to go is OpenSea. Look at the <Ab link={'https://opensea.io/collection/everdragons2-genesis-token'}
-                                                               label={'Everdragons marketplace'}/> and pick them before the price skyrockets.</span>]
+        <span>The best place to go is OpenSea. Look at the <Ab link={'https://opensea.io/collection/everdragons2-genesis-token'} label={'Everdragons marketplace'}/> and pick them before the price skyrockets.</span>]
     ]
+
     let i = 0
     const rows = []
 
