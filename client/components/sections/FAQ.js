@@ -50,7 +50,7 @@ export default class FAQ extends Base {
         <span>Each Everdragons2 is an ERC-721 token. Metadata and images will be served by Everdragons2, but their consistency and immutability are guaranteed (read <Ab label={'this blog post'} link={'https://medium.com/ndujalabs/everdragons2-fair-tokens-distribution-9c6f77c748f6'}/> for more details).</span>],
 
       ['Any advantage for original Everdragons holders?',
-        <span>Definitely yes. During the final sale of the 9401 Genesis Tokens, holders of the original dragons can claim as many Everdragons2 Genesis tokens as they hold in the form of original Everdragons in Ethereum, Tron, and/or POA Network.</span>]
+        <span>During the final sale of the 9401 Genesis Tokens, holders of the original dragons can claim as many Everdragons2 Genesis tokens as they hold in the form of original Everdragons in Ethereum, Tron, and/or POA Network.</span>]
     ]
 
     let i = 0
