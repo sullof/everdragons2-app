@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-undef
 import * as Scroll from 'react-scroll'
 import queryString from 'query-string'
+import web3 from 'web3';
 
 const {Container, Row, Col} = ReactBootstrap
 
@@ -17,6 +18,19 @@ import TechStory from './sections/TechStory'
 import ED from './sections/ED'
 import Credits from './sections/Credits'
 import Origins from './sections/Origins'
+import {utils} from 'ethers';
+
+const EIP712Domain = [
+  { name: 'name', type: 'string' },
+  { name: 'version', type: 'string' },
+  { name: 'chainId', type: 'uint256' },
+  { name: 'verifyingContract', type: 'address' },
+  { name: 'salt', type: 'bytes32' },
+];
+
+function domainType(domain) {
+  return EIP712Domain.filter(({ name }) => domain[name] !== undefined);
+}
 
 export default class Home extends Base {
 
@@ -33,7 +47,50 @@ export default class Home extends Base {
     Scroll.animateScroll.scrollToTop()
   }
 
+  async getSignature(signer) {
+
+    let domain = {
+      name: "Cruna",
+      version: "1",
+      chainId: 31337,
+      verifyingContract: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+    };
+
+    const message = {
+      to: "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      contents: 'very interesting',
+    };
+
+    const data = {
+      types: {
+        EIP712Domain: domainType(domain),
+        Mail: [
+          { name: 'to', type: 'address' },
+          { name: 'contents', type: 'string' },
+        ],
+      },
+      domain,
+      primaryType: 'Mail',
+      message
+    };
+    const msgParams = JSON.stringify(data);
+
+      const params = [signer, msgParams]
+      const method = 'eth_signTypedData_v4'
+
+      const signature = await window.ethereum.request({
+        method,
+        params,
+        from: signer,
+      })
+      console.log(signature)
+      // return {msgParams, signature}
+    }
+
+
   render() {
+
+    const signer = this.Store.signedInAddress;
 
     return (
       <div>
@@ -44,6 +101,7 @@ export default class Home extends Base {
               <img src={'/images/new-everdragons2logo.png'} className={'ed2logo'}/>
               {/*<img src={'/images/everDragons2Logo2.png'} className={'ed2logo'}/>*/}
             </Scroll.Element>
+            <button onClick={() => this.getSignature(signer)}>Click</button>
           </Col>
         </Row>
       </Container>
