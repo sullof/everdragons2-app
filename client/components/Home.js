@@ -53,7 +53,7 @@ export default class Home extends Base {
       name: "Cruna",
       version: "1",
       chainId: 31337,
-      verifyingContract: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      verifyingContract: "0x0E801D84Fa97b50751Dbf25036d067dCf18858bF",
     };
 
     const message = {
