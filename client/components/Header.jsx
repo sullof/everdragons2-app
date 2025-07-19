@@ -1,15 +1,11 @@
-// eslint-disable-next-line no-undef
-import Ab from './Ab';
-
-const {Link} = ReactRouterDOM
-
+import { Link } from 'react-router-dom'
+import { Navbar, Nav, Button } from 'react-bootstrap'
 import * as Scroll from 'react-scroll'
-
-// eslint-disable-next-line no-undef
-const {Navbar, Nav, Button} = ReactBootstrap
 
 import Address from '../utils/Address'
 import Base from './Base'
+import WalletConnect from './WalletConnect'
+import NetworkSwitch from './NetworkSwitch'
 
 export default class Header extends Base {
 
@@ -88,20 +84,11 @@ export default class Header extends Base {
       }
     }
 
-    let connectedTo = <span className={'connected'}>{
-      this.Store.signedInAddress
-        ? <span className={'notConnected'}>Switch to Ethereum Mainnet</span>
-        : null
-    }
-    </span>
+    let connectedTo = null
     let {connectedNetwork} = this.Store
 
-    if (connectedNetwork) {
-      connectedTo = ''
-      // <span><i className="fa fa-plug"
-      //          style={{color: '#40cc90', marginRight: 10}}/></span>
-    } else {
-      // connectedTo = '
+    if (this.Store.signedInAddress && !connectedNetwork) {
+      connectedTo = <NetworkSwitch Store={this.Store} />
     }
 
     const getTitle = (what, title) => {
@@ -139,6 +126,11 @@ export default class Header extends Base {
             <Scroll.Link
               offset={-80}
               spy={true} smooth={true} to='roadmap' onClick={this.setExpanded}>Roadmap</Scroll.Link>
+            {this.Store.signedInAddress &&
+              <Scroll.Link
+                offset={-80}
+                spy={true} smooth={true} to='mydragons' onClick={this.setExpanded}>Your Dragons</Scroll.Link>
+            }
             {/*<Scroll.Link*/}
             {/*  offset={-80}*/}
             {/*  spy={true} smooth={true} to='sale' onClick={this.setExpanded}>Sale</Scroll.Link>*/}
@@ -164,6 +156,9 @@ export default class Header extends Base {
             navbarScroll
           >
             <Nav.Link as={Link} to="/" onClick={this.setExpanded}>Home</Nav.Link>
+            {this.Store.signedInAddress &&
+              <Nav.Link as={Link} to="/#mydragons" onClick={this.setExpanded}>Your Dragons</Nav.Link>
+            }
           </Nav>
 
         }
@@ -175,20 +170,15 @@ export default class Header extends Base {
           <a className="item" target="_blank" href="https://twitter.com/everdragons2" rel="noreferrer">
             <i className="fab fa-twitter" /> <span className="roboto300">X</span>
           </a>
-          
+
         </Navbar.Text>
 
         <Navbar.Text>
           {connectedTo}
         </Navbar.Text>
-        {
-          this.Store.signedInAddress
-            ? <Navbar.Text>
-              <i className="fas fa-user-astronaut" style={{marginRight: 10}}/>
-              {address}
-            </Navbar.Text>
-            : <Button onClick={this.props.connect} variant="primary" className={'chiaro'}>Connect your wallet</Button>
-        }
+        <Navbar.Text>
+          <WalletConnect Store={this.Store} setStore={this.props.setStore} />
+        </Navbar.Text>
         {
           Address.isAdmin(this.Store.signedInAddress)
             ? <Navbar.Text>

@@ -1,3 +1,7 @@
+import './polyfills.js'
+import React from 'react'
+import { createRoot } from 'react-dom/client'
 import App from './components/App.jsx'
-// eslint-disable-next-line no-undef
-ReactDOM.render(<App />, document.getElementById('root'))
+
+const root = createRoot(document.getElementById('root'))
+root.render(<App />)

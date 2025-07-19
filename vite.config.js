@@ -9,10 +9,16 @@ export default defineConfig({
     outDir: '../dist',
     emptyOutDir: true,
     rollupOptions: {
+      external: [],
       output: {
         entryFileNames: 'bundle/[name].js',
         chunkFileNames: 'bundle/[name].js',
-        assetFileNames: 'bundle/[name].[ext]'
+        assetFileNames: 'bundle/[name].[ext]',
+        globals: {
+          buffer: 'Buffer',
+          util: 'util',
+          stream: 'stream'
+        }
       }
     }
   },
@@ -25,6 +31,11 @@ export default defineConfig({
     }
   },
   define: {
-    global: 'globalThis'
-  }
+    global: 'globalThis',
+    'process.env': {}
+  },
+  optimizeDeps: {
+    include: ['wagmi', 'viem', '@web3modal/wagmi']
+  },
+  publicDir: '../public'
 }) 

@@ -1,7 +1,6 @@
-// eslint-disable-next-line no-undef
-const {Container, Row, Col, Carousel} = ReactBootstrap
+import React from 'react'
+import { Container, Row, Col } from 'react-bootstrap'
 import * as Scroll from 'react-scroll'
-import Markdown from 'react-markdown-it'
 import Ab from '../Ab'
 
 import Base from '../Base'
@@ -21,7 +20,12 @@ export default class Intro extends Base {
 
   componentDidMount() {
     this.setTimeout(this.slide, 3000)
+  }
 
+  componentWillUnmount() {
+    if (this.slideTimer) {
+      clearTimeout(this.slideTimer)
+    }
   }
 
   slide() {
@@ -31,7 +35,7 @@ export default class Intro extends Base {
     }
     index++
     this.setState({index})
-    this.setTimeout(this.slide, 3000)
+    this.slideTimer = this.setTimeout(this.slide, 3000)
   }
 
   getSingle(i) {
@@ -46,7 +50,7 @@ export default class Intro extends Base {
 
   getFour(j) {
     let cols = []
-    const m = this.isMobile() ? 2 : 6
+    const m = this.isMobile() ? 3 : 6 // Show 3 on mobile, 6 on desktop
     for (let i = 0; i< m;i++) {
       cols.push(this.getSingle(j))
       if (j === 7) {
@@ -54,16 +58,16 @@ export default class Intro extends Base {
       }
       j++
     }
-    return <Carousel.Item>
-      <Row className={'dragons-show'}>
+    return (
+      <Row className={'dragons-show'} key={`four-${j}`}>
         {cols}
       </Row>
-    </Carousel.Item>
+    )
   }
 
   getThree(j) {
     let cols = []
-    const m = this.isMobile() ? 2 : 5
+    const m = this.isMobile() ? 3 : 5 // Show 3 on mobile, 5 on desktop
     for (let i = 0; i< m;i++) {
       cols.push(this.getSingle(j))
       if (j === 7) {
@@ -71,95 +75,42 @@ export default class Intro extends Base {
       }
       j++
     }
-    return <Carousel.Item>
-      <Row className={'dragons-show'}>
+    return (
+      <Row className={'dragons-show'} key={`three-${j}`}>
         {this.isMobile() ? '' : <Col lg={1}>{' '}</Col>}
         {cols}
         {this.isMobile() ? '' : <Col lg={1}>{' '}</Col>}
       </Row>
-    </Carousel.Item>
+    )
   }
 
   render() {
-
     const {index} = this.state
+    
+    // Create an array of all dragon rows
+    const dragonRows = [
+      this.getFour(0),
+      this.getThree(2),
+      this.getFour(4),
+      this.getThree(1),
+      this.getFour(6),
+      this.getThree(3),
+      this.getFour(7),
+      this.getThree(5)
+    ]
+
     return (
       <div className={'home-section'}>
-        {/*<Row>*/}
-        {/*  <Col>*/}
-        {/*    <div className={'textBlock centered'} style={{fontSize: '2rem'}}>*/}
-        {/*      Everdragons2 Genesis tokens are for sale!<br/>*/}
-        {/*      <Ab link={'https://app.everdragons2.com'} label={'Visit app.everdragons2.com to get your E2GT'}/>*/}
-
-        {/*    </div>*/}
-        {/*  </Col>*/}
-        {/*</Row>*/}
-        {/*<Row>*/}
-        {/*  <Col lg={4} xs={1}>*/}
-        {/*    <img*/}
-        {/*      className={"sneakpeak"}*/}
-        {/*      src={"https://img.everdragons2.com/assets/animation1.gif"}*/}
-        {/*    />*/}
-        {/*  </Col>*/}
-        {/*  <Col lg={4} xs={1}>*/}
-        {/*    <img*/}
-        {/*      className={"sneakpeak"}*/}
-        {/*      src={"https://img.everdragons2.com/assets/animation2.gif"}*/}
-        {/*    />*/}
-        {/*  </Col>*/}
-        {/*  <Col lg={4} xs={1}>*/}
-        {/*    <img*/}
-        {/*      className={"sneakpeak"}*/}
-        {/*      src={"https://img.everdragons2.com/assets/animation3.gif"}*/}
-        {/*    />*/}
-        {/*  </Col>*/}
-        {/*</Row>*/}
-        <Carousel
-          fade
-          indicators={false}
-          nextLabel={''}
-          nextIcon={''}
-          prevLabel={''}
-          prevIcon={''}
-          activeIndex={index}
-          // onSelect={handleSelect}
-        >
-          {this.getFour(0)}
-          {this.getThree(2)}
-          {this.getFour(4)}
-          {this.getThree(1)}
-          {this.getFour(6)}
-          {this.getThree(3)}
-          {this.getFour(7)}
-          {this.getThree(5)}
-        </Carousel>
+        <div className="dragon-carousel">
+          {dragonRows[index]}
+        </div>
         <Row>
           <Col>
-            <div className={'textBlock'}>
-              EverDragons2 is a collection of 10,001 dragons randomly generated from hundreds of assets. They inherit the legacy of Everdragons, minted in 2018 as the first bridgeable cross-chain non-fungible token (NFT) for gaming. Each dragon is unique and represents a piece of blockchain gaming history.
+            <div className={'textBlock textBlockM'}>
+              EverDragons2 is a collection of 10,001 dragons randomly generated from hundreds of assets. They inherit the legacy of <a href="https://opensea.io/collection/everdragons" target="_blank" rel="noopener noreferrer">Everdragons</a>, minted in 2018 as the first bridgeable cross-chain non-fungible token (NFT) for gaming.
             </div>
           </Col>
         </Row>
-
-        {/*<div className={'home-section'}>*/}
-        {/*  <h1>Play Goldmine, Win Everdragons2</h1>*/}
-        {/*<Row>*/}
-        {/*    <Col>*/}
-        {/*      <div className={'textBlock'}>*/}
-        {/*        <p>*/}
-        {/*          1. Go to <a href="https://discord.gg/8rHqANsM">#goldmine</a> on Discord and /register your address.*/}
-        {/*        </p>*/}
-        {/*        <p>*/}
-        {/*          2. Click the image below... enjoy!*/}
-        {/*        </p>*/}
-
-        {/*        <a href="https://goldmine.everdragons2.com">*/}
-        {/*          <img src="/images/goldmine.png" width="100%" />*/}
-        {/*        </a>*/}
-        {/*      </div>*/}
-        {/*    </Col>*/}
-        {/*</Row>*/}
-        {/*</div>*/}
       </div>
     )
   }

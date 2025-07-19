@@ -1,22 +1,32 @@
-// eslint-disable-next-line no-undef
+import React from 'react'
 import * as Scroll from 'react-scroll'
 import queryString from 'query-string'
-
-const {Container, Row, Col} = ReactBootstrap
+import { Container, Row, Col } from 'react-bootstrap'
 
 import Base from './Base'
 import Intro from './sections/Intro'
 import Story from './sections/Story'
-import Team from './sections/Team'
-import Art from './sections/Art'
-import Drops from './sections/Drops'
-import FAQ from './sections/FAQ'
 import Roadmap from './sections/Roadmap'
-import Sale from './sections/Sale'
-import TechStory from './sections/TechStory'
-import ED from './sections/ED'
-import Credits from './sections/Credits'
+import YourDragons from './sections/YourDragons'
 
+// Custom Container component that handles isTop prop
+const TopContainer = ({ isTop, children, ...props }) => {
+  const getMarginTop = () => {
+    if (!isTop) return {};
+    
+    // Check if we're on mobile (you can adjust this breakpoint)
+    const isMobile = window.innerWidth <= 768;
+    return {
+      marginTop: isMobile ? 70 : 100
+    };
+  };
+
+  return (
+    <Container {...props} style={getMarginTop()}>
+      {children}
+    </Container>
+  );
+};
 
 export default class Home extends Base {
 
@@ -30,14 +40,14 @@ export default class Home extends Base {
   }
 
   componentDidMount() {
-    Scroll.animateScroll.scrollToTop()
+    // Removed scrollToTop to prevent automatic scrolling on page refresh
   }
 
   render() {
 
     return (
       <div>
-      <Container style={{marginTop: 100}}>
+      <TopContainer isTop={true}>
         <Row>
           <Col className={'centered'}>
             <Scroll.Element name='intro'>
@@ -46,79 +56,42 @@ export default class Home extends Base {
             </Scroll.Element>
           </Col>
         </Row>
-      </Container>
+      </TopContainer>
 
-      <div no-className="bg0">
       <Container>
         <Intro
           Store={this.Store}
           setStore={this.setStore}
         />
+</Container>
 
+<Container>
+<YourDragons
+          Store={this.Store}
+          setStore={this.setStore}
+        />
+</Container>
+
+<Container>
         <Story
           Store={this.Store}
           setStore={this.setStore}
         />
       </Container>
+        <Container>
+
+          <Roadmap
+            Store={this.Store}
+            setStore={this.setStore}
+          />
+
+        </Container>
+
+
+
+      <div style={{height: 100}}>
+
       </div>
-
-      <div no-className="bg1">
-      <Container>
-        {/*<Art*/}
-        {/*  Store={this.Store}*/}
-        {/*  setStore={this.setStore}*/}
-        {/*/>*/}
-
-        <Roadmap
-          Store={this.Store}
-          setStore={this.setStore}
-        />
-
-        {/*<Sale*/}
-        {/*  Store={this.Store}*/}
-        {/*  setStore={this.setStore}*/}
-        {/*/>*/}
-      </Container>
-      </div>
-
-      {/*<div className="bg2">
-      <Container>
-
-        <FAQ
-          Store={this.Store}
-          setStore={this.setStore}
-        />
-
-
-
-        <Team
-          Store={this.Store}
-          setStore={this.setStore}
-        />
-
-        <div style={{height: 24}}>{' '}</div>
-
-        <Drops
-          Store={this.Store}
-          setStore={this.setStore}
-        />
-      </Container>
-      </div>*/}
-
-      {/*<div no-className="bg3">
-      <Container style={{marginBottom: 50}}> */}
-
-        {/*<ED*/}
-        {/*  Store={this.Store}*/}
-        {/*  setStore={this.setStore}*/}
-        {/*/>*/}
-
-        {/*<Credits
-          Store={this.Store}
-          setStore={this.setStore}
-        />
-      </Container>
-      </div>*/}
       </div>
     )
   }

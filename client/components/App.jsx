@@ -1,24 +1,19 @@
-// eslint-disable-next-line no-undef
-// const {BrowserRouter, Route //, Link
-// } = ReactRouterDOM
-
-// eslint-disable-next-line no-undef
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
+import { Modal, Button } from 'react-bootstrap'
 import Address from '../utils/Address.js'
 
-// eslint-disable-next-line no-undef
-const {BrowserRouter, Route, Switch, Redirect} = ReactRouterDOM
-
-// eslint-disable-next-line no-undef
-const {Modal, Button} = ReactBootstrap
-
 import { ethers } from 'ethers'
+import { WagmiConfig } from 'wagmi'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { config } from '../config/wagmi.js'
+import '../config/web3modal.js'
 
 // import {Web3Provider} from '@ethersproject/providers'
 // import Web3Modal from 'web3modal'
 
 import { Contract } from '@ethersproject/contracts'
 
-import config from '../config/index.js'
+import appConfig from '../config/index.js'
 
 import ls from 'local-storage'
 
@@ -28,8 +23,10 @@ import Home from './Home.jsx'
 import Admin from './Admin.jsx'
 import Error404 from './Error404.jsx'
 import Footer from './Footer.jsx'
-import LandingPage from './LandingPage.jsx'
-import FullStory from './FullStory.jsx'
+import WagmiStoreSync from './WagmiStoreSync.jsx'
+
+// Create a client
+const queryClient = new QueryClient()
 
 class App extends Common {
 
@@ -42,7 +39,7 @@ class App extends Common {
         editing: {},
         temp: {},
         menuVisibility: false,
-        config,
+        config: appConfig,
         width: this.getWidth(),
         pathname: window.location.pathname
       }
@@ -103,7 +100,7 @@ class App extends Common {
         contract,
         connectedNetwork,
         networkNotSupported
-      } = this.getContract(config, chainId, provider)
+      } = this.getContract(appConfig, chainId, provider)
 
       this.setStore({
         provider,
@@ -203,79 +200,56 @@ class App extends Common {
 
     const Store = this.state.Store
 
-    return <BrowserRouter>
-      <Header
-        Store={Store}
-        setStore={this.setStore}
-        connect={this.connect}
-      />
-      <main>
-        <Switch>
-          {/*<Route exact path="/">*/}
-          {/*  <LandingPage*/}
-          {/*    Store={Store}*/}
-          {/*    setStore={this.setStore}*/}
-          {/*  />*/}
-          {/*</Route>*/}
-          <Route exact path="/">
-            <Home
+    return (
+      <WagmiConfig config={config}>
+        <QueryClientProvider client={queryClient}>
+          <BrowserRouter>
+            <WagmiStoreSync Store={Store} setStore={this.setStore} />
+            <Header
+              Store={Store}
+              setStore={this.setStore}
+              connect={this.connect}
+            />
+            <main>
+              <Routes>
+                {/*<Route path="/" element={<LandingPage Store={Store} setStore={this.setStore} />} />*/}
+                <Route path="/" element={<Home Store={Store} setStore={this.setStore} />} />
+                <Route path="/admin" element={
+                  Store.signedInAddress
+                    ? (
+                      Address.isAdmin(Store.signedInAddress)
+                        ? <Admin Store={Store} setStore={this.setStore} />
+                        : <Navigate to="/404" replace />
+                    )
+                    : <Navigate to="/404" replace />
+                } />
+                <Route path="*" element={<Error404 Store={Store} setStore={this.setStore} />} />
+              </Routes>
+            </main>
+            <Footer
               Store={Store}
               setStore={this.setStore}
             />
-          </Route>
-          <Route exact path="/story">
-            <FullStory
-              Store={Store}
-              setStore={this.setStore}
-            />
-          </Route>
-          <Route exact path="/admin">
-            {
-              Store.signedInAddress
-                ? (
-                  Address.isAdmin(Store.signedInAddress)
-                    ? <Admin
-                      Store={Store}
-                      setStore={this.setStore}
-                    />
-                    : <Redirect to={'/404'}/>
-                )
-                : null
-            }
-          </Route>
-          <Route exact path="*">
-            <Error404
-              Store={Store}
-              setStore={this.setStore}
-            />
-          </Route>
-        </Switch>
-        <Footer/>
-      </main>
-      {Store.showModal
-        ? <Modal.Dialog>
-          <Modal.Header>
-            <Modal.Title>{Store.modalTitle}</Modal.Title>
-          </Modal.Header>
-
-          <Modal.Body>{Store.modalBody}</Modal.Body>
-
-          <Modal.Footer>
-            <Button onClick={() => {
-              this.setStore({showModal: false})
-            }}>{Store.modalClose || 'Close'}</Button>
-            {
-              this.state.secondButton
-                ? <Button onClick={() => {
-                  Store.modalAction()
-                  this.setStore({showModal: false})
-                }} bsStyle="primary">{Store.secondButton}</Button>
-                : null
-            }
-          </Modal.Footer>
-        </Modal.Dialog>
-        : null}
-    </BrowserRouter>
+            <Modal show={Store.showModal} onHide={this.handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>{Store.modalTitle}</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>{Store.modalBody}</Modal.Body>
+              <Modal.Footer>
+                {Store.secondButton ? (
+                  <Button variant="secondary" onClick={Store.modalAction}>
+                    {Store.secondButton}
+                  </Button>
+                ) : null}
+                <Button variant="primary" onClick={this.handleClose}>
+                  {Store.modalClose}
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </BrowserRouter>
+        </QueryClientProvider>
+      </WagmiConfig>
+    )
   }
 }
 

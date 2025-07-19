@@ -1,9 +1,7 @@
-// const {Link} = ReactRouterDOM
+import React from 'react'
 import Base from './Base'
 import Ab from './Ab'
-
-// eslint-disable-next-line no-undef
-const {Navbar, Button} = ReactBootstrap
+import { Navbar, Button } from 'react-bootstrap'
 
 class Footer extends Base {
 

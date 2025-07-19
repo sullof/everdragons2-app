@@ -26,8 +26,8 @@ const roadmap = [
     'Reunion of the EverDragons2 on Ethereum'
   ],
   'current', [
-    'Restarting the project with a new vision.',
-    'Distributing the not-yet-minted '
+    'Restarting the project...',
+    'Looking for creative ways to distribute the not-yet-minted tokens'
   ]
 ]
 

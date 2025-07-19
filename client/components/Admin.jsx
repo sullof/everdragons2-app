@@ -1,5 +1,5 @@
-// eslint-disable-next-line no-undef
-const {Button, Container, Form} = ReactBootstrap
+import React from 'react'
+import { Button, Container, Form } from 'react-bootstrap'
 
 
 import Base from './Base'

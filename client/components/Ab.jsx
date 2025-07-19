@@ -1,5 +1,6 @@
 
-// eslint-disable-next-line no-undef
+import React from 'react'
+
 export default class Ab extends React.Component {
 
   render() {
