@@ -105,20 +105,20 @@ export default class Home extends Base {
       </Container>
       </div>*/}
 
-      <div no-className="bg3">
-      <Container style={{marginBottom: 50}}>
+      {/*<div no-className="bg3">
+      <Container style={{marginBottom: 50}}> */}
 
         {/*<ED*/}
         {/*  Store={this.Store}*/}
         {/*  setStore={this.setStore}*/}
         {/*/>*/}
 
-        <Credits
+        {/*<Credits
           Store={this.Store}
           setStore={this.setStore}
         />
       </Container>
-      </div>
+      </div>*/}
       </div>
     )
   }

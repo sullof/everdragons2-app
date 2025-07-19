@@ -46,4 +46,4 @@ class WebcamCapture extends Base {
   }
 }
 
-module.exports = WebcamCapture
+export default WebcamCapture

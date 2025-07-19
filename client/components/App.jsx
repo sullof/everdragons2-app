@@ -3,7 +3,7 @@
 // } = ReactRouterDOM
 
 // eslint-disable-next-line no-undef
-import Address from '../utils/Address'
+import Address from '../utils/Address.js'
 
 // eslint-disable-next-line no-undef
 const {BrowserRouter, Route, Switch, Redirect} = ReactRouterDOM
@@ -11,25 +11,25 @@ const {BrowserRouter, Route, Switch, Redirect} = ReactRouterDOM
 // eslint-disable-next-line no-undef
 const {Modal, Button} = ReactBootstrap
 
-const ethers = require('ethers')
+import { ethers } from 'ethers'
 
 // import {Web3Provider} from '@ethersproject/providers'
 // import Web3Modal from 'web3modal'
 
-import {Contract} from '@ethersproject/contracts'
+import { Contract } from '@ethersproject/contracts'
 
-import config from '../config'
+import config from '../config/index.js'
 
 import ls from 'local-storage'
 
-import Common from './Common'
-import Header from './Header'
-import Home from './Home'
-import Admin from './Admin'
-import Error404 from './Error404'
-import Footer from './Footer'
-import LandingPage from './LandingPage'
-import FullStory from './FullStory'
+import Common from './Common.jsx'
+import Header from './Header.jsx'
+import Home from './Home.jsx'
+import Admin from './Admin.jsx'
+import Error404 from './Error404.jsx'
+import Footer from './Footer.jsx'
+import LandingPage from './LandingPage.jsx'
+import FullStory from './FullStory.jsx'
 
 class App extends Common {
 
@@ -279,4 +279,4 @@ class App extends Common {
   }
 }
 
-module.exports = App
+export default App

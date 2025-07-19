@@ -1,4 +1,4 @@
-const Everdragons2 = require('./EverDragons2.json')
+import Everdragons2 from './EverDragons2.json'
 
 let isDev
 if (typeof window !== 'undefined') {
@@ -38,4 +38,4 @@ const config = {
   abi: Everdragons2.abi
 }
 
-module.exports = config
+export default config

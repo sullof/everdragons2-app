@@ -135,4 +135,4 @@ class Admin extends Base {
 }
 
 
-module.exports = Admin
+export default Admin

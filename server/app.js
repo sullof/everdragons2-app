@@ -21,7 +21,7 @@ let indexText
 
 function getIndex() {
   if (!indexText) {
-    indexText = fs.readFileSync(path.resolve(__dirname, '../public/index.html'), 'utf-8')
+    indexText = fs.readFileSync(path.resolve(__dirname, '../dist/index.html'), 'utf-8')
   }
   return indexText
 }
@@ -57,6 +57,7 @@ app.use('/:anything', function (req, res, next) {
   }
 })
 
+app.use(express.static(path.resolve(__dirname, '../dist')))
 app.use(express.static(path.resolve(__dirname, '../public')))
 
 

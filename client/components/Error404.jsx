@@ -21,4 +21,4 @@ class Error404 extends Base {
   }
 }
 
-module.exports = Error404
+export default Error404

@@ -26,4 +26,4 @@ class Footer extends Base {
   }
 }
 
-module.exports = Footer
+export default Footer

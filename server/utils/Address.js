@@ -1,4 +1,4 @@
-import { toChecksumAddress } from 'ethereumjs-util'
+const {toChecksumAddress} = require('ethereumjs-util')
 
 class Address {
 
@@ -16,5 +16,4 @@ class Address {
   }
 }
 
-export default Address
-
+module.exports = Address 

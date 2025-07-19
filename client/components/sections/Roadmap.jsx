@@ -25,7 +25,7 @@ const roadmap = [
   'April 2025', [
     'Reunion of the EverDragons2 on Ethereum'
   ],
-  '2025-2026', [
+  'current', [
     'Restarting the project with a new vision.',
     'Distributing the not-yet-minted '
   ]
