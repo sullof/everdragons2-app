@@ -28,7 +28,7 @@ export default class ED extends Base {
               <div className={'centered'} style={{marginTop: 24, paddingBottom: 24}}>
                 {/*<Ab label={<img src={'/images/ndujaLabs.png'} alt={' '} style={{width: 200}}/>}*/}
                 {/*    link={'https://ndujalabs.com'}/>*/}
-                <h5>Everdragons2 is a project by 'ndujaLabs, a laboratory for decentralized projects.</h5>
+                <h5>EverDragons2 is a project by <Ab label={'ndujaLabs'} link={'https://ndujalabs.com'}/>, a laboratory for decentralized projects.</h5>
               </div>
             {/*</div>*/}
           </Col>

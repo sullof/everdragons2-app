@@ -11,7 +11,7 @@ export default class LandingPage extends Base {
       <Container style={{marginTop: 100}}>
         <Row>
           <Col className={'centered'}>
-            <img src={'/images/everDragonsLogo.png'} className={'bigLogo'}/>
+            <img src={'https://arweave.net/rfoyL5aDkgPmyPX8mYdJxZGyFOJ1LOX5LFmNg8_R9Ys/everDragonsLogo.png'} className={'bigLogo'}/>
           </Col>
         </Row>
         <Row>

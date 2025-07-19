@@ -24,14 +24,14 @@ async function getPictureAsBase64(serial, address) {
 
 router.get('/ed2/', async (req, res) => {
   return res.json({
-    "name": "Everdragons2",
-    "description": "Everdragons2 is a collection of 10,001 dragons randomly generated from hundreds of assets. They inherit the legacy of Everdragons, minted in 2018 as the first bridgeable cross-chain non-fungible token (NFT) for gaming. In the marvelous upcoming Origins, the play-to-earn game of the Everdragons Metaverse, holders of Everdragons2 will get a Loot Box containing Obsidian (the Origins token), Settlement Plans, and Genesis Units based on rarity.",
-    "image": "https://www.everdragons2.com/images/new-everdragons2logo.png",
+    "name": "EverDragons2",
+    "description": "EverDragons2 is a collection of 10,001 dragons randomly generated from hundreds of assets. They inherit the legacy of Everdragons, minted in 2018 as the first bridgeable cross-chain non-fungible token (NFT) for gaming. Each dragon is unique and represents a piece of blockchain gaming history.",
+    "image": "https://arweave.net/rfoyL5aDkgPmyPX8mYdJxZGyFOJ1LOX5LFmNg8_R9Ys/everdragons2.png",
     "external_link": "https://everdragons2.com",
     // "seller_fee_basis_points": 250,
     // "fee_recipient": "...",
     // "chains": {
-    //   "ethereum": "0x3b6aad76254a79a9e256c8aed9187dea505aad52",
+    //   "ethereum": "everdragons2.eth",
     //   "polygon": "0x0ece...",
     //   "bsc": "0x0ece...",
     //   // "solana": "...",
@@ -61,9 +61,9 @@ router.get('/ed2/:id', async (req, res) => {
 
 router.get('/ed2-test/', async (req, res) => {
   return res.json({
-    "name": "Everdragons2 on Testnets",
-    "description": "Everdragons2 is a collection of 10,001 dragons randomly generated from hundreds of assets. They inherit the legacy of Everdragons, minted in 2018 as the first bridgeable cross-chain non-fungible token (NFT) for gaming. In the marvelous upcoming Origins, the play-to-earn game of the Everdragons Metaverse, holders of Everdragons2 will get a Loot Box containing Obsidian (the Origins token), Settlement Plans, and Genesis Units based on rarity.",
-    "image": "https://www.everdragons2.com/images/new-everdragons2logo.png",
+    "name": "EverDragons2 on Testnets",
+    "description": "EverDragons2 is a collection of 10,001 dragons randomly generated from hundreds of assets. They inherit the legacy of Everdragons, minted in 2018 as the first bridgeable cross-chain non-fungible token (NFT) for gaming. Each dragon is unique and represents a piece of blockchain gaming history.",
+    "image": "https://arweave.net/rfoyL5aDkgPmyPX8mYdJxZGyFOJ1LOX5LFmNg8_R9Ys/everdragons2.png",
     "external_link": "https://everdragons2.com",
     // "seller_fee_basis_points": 250,
     // "fee_recipient": "...",

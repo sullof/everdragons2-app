@@ -16,7 +16,7 @@ import Sale from './sections/Sale'
 import TechStory from './sections/TechStory'
 import ED from './sections/ED'
 import Credits from './sections/Credits'
-import Origins from './sections/Origins'
+
 
 export default class Home extends Base {
 
@@ -41,14 +41,14 @@ export default class Home extends Base {
         <Row>
           <Col className={'centered'}>
             <Scroll.Element name='intro'>
-              <img src={'/images/new-everdragons2logo.png'} className={'ed2logo'}/>
+              <img src={'https://arweave.net/rfoyL5aDkgPmyPX8mYdJxZGyFOJ1LOX5LFmNg8_R9Ys/everdragons2.png'} className={'ed2logo'}/>
               {/*<img src={'/images/everDragons2Logo2.png'} className={'ed2logo'}/>*/}
             </Scroll.Element>
           </Col>
         </Row>
       </Container>
 
-      <div className="bg0">
+      <div no-className="bg0">
       <Container>
         <Intro
           Store={this.Store}
@@ -62,7 +62,7 @@ export default class Home extends Base {
       </Container>
       </div>
 
-      <div className="bg1">
+      <div no-className="bg1">
       <Container>
         {/*<Art*/}
         {/*  Store={this.Store}*/}
@@ -81,7 +81,7 @@ export default class Home extends Base {
       </Container>
       </div>
 
-      <div className="bg2">
+      {/*<div className="bg2">
       <Container>
 
         <FAQ
@@ -89,10 +89,7 @@ export default class Home extends Base {
           setStore={this.setStore}
         />
 
-        <Origins
-          Store={this.Store}
-          setStore={this.setStore}
-        />
+
 
         <Team
           Store={this.Store}
@@ -101,14 +98,14 @@ export default class Home extends Base {
 
         <div style={{height: 24}}>{' '}</div>
 
-        {/*<Drops*/}
-        {/*  Store={this.Store}*/}
-        {/*  setStore={this.setStore}*/}
-        {/*/>*/}
+        <Drops
+          Store={this.Store}
+          setStore={this.setStore}
+        />
       </Container>
-      </div>
+      </div>*/}
 
-      <div className="bg3">
+      <div no-className="bg3">
       <Container style={{marginBottom: 50}}>
 
         {/*<ED*/}

@@ -36,7 +36,7 @@ A few of them, the most adventurous, crossed the ocean to reach Tron and, later,
 
       `### Current time
 
-On September 17th, 2021, [Agdaroth](https://opensea.io/assets/0x3b6aad76254a79a9e256c8aed9187dea505aad52/10001), a mysterious black dragon, landed on the Ethereum blockchain and laid 10000 eggs to give birth to the Everdragons2.
+On September 17th, 2021, [Agdaroth](https://opensea.io/assets/everdragons2.eth/10001), a mysterious black dragon, landed on the Ethereum blockchain and laid 10000 eggs to give birth to the EverDragons2.
 
 She is willing to give free eggs to every protector of an original Everdragons, and sell 8000 to the most excellent collectors.
 
@@ -84,9 +84,9 @@ More Everdragons will populate the planet. Holders of two or more Everdragons2 w
 
           <h3 style={{paddingTop: 24}}>Current time</h3>
 
-          <div>On September 17th, 2021, <Ab label={'Agdaroth'} link={'https://opensea.io/assets/0x3b6aad76254a79a9e256c8aed9187dea505aad52/10001'}/>, a mysterious black dragon, landed on the Ethereum blockchain and laid 10000 eggs to give birth to the Everdragons2.</div>
+                      <div>On September 17th, 2021, <Ab label={'Agdaroth'} link={'https://opensea.io/assets/everdragons2.eth/10001'}/>, a mysterious black dragon, landed on the Ethereum blockchain and laid 10000 eggs to give birth to the EverDragons2.</div>
           <CenteredImage top={12} bottom={12}
-                         src={'/images/agdaroth-small.png'}
+                         src={'https://arweave.net/rfoyL5aDkgPmyPX8mYdJxZGyFOJ1LOX5LFmNg8_R9Ys/agdaroth-small.png'}
           />
           <div>She is willing to give free eggs to every protector of an original Everdragons, and sell 8000 to the most excellent collectors.</div>
 

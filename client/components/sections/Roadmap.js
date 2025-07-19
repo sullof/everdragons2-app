@@ -3,7 +3,7 @@ import Base from '../Base'
 
 const roadmap = [
   '2018', ['Invention of Everdragons, the first cross-chain non-fungible token (NFT) project'],
-  'Sept. 2021', ['Announcement of Everdragons2'],
+  'Sept. 2021', ['Announcement of EverDragons2'],
   'Oct. 2021', ['Technical development, team formation, community building'],
   'Nov 2021', [
     'Partnership with Polygon',
@@ -12,24 +12,22 @@ const roadmap = [
   'Dec 2021', [
     'Announcement of crypto-metaverse and in-game use cases and partnerships (e.g. decentralized finance (DeFi), play-to-earn)',
     'Goldmine game context',
-    'ARG#1 quest',
-    'Integrations of Wormhole native technology for cross-chain token bridging'
+    'ARG#1 quest'
   ],
   'Q1/Q2 2022', [
-    'Giveaways of 350 Everdragons2 Genesis Governance tokens to the community',
-    'Public sale of 250 Everdragons2 Genesis Governance tokens',
-    'Reveal and airdrop of the 600 Genesis Governance tokens',
-    'Release of the Everdragons2 MiniGame'
+    'Giveaways of 350 EverDragons2 Genesis Governance tokens to the community',
+    'Public sale of 250 EverDragons2 Genesis Governance tokens',
+    'Reveal and airdrop of the 600 Genesis Governance tokens'
   ],
-  'Q3/Q4 2022', [
-    'Building Everdragons2 GameFi protocol, for staking/lending infrastructure',
-    'Decentralized autonomous organization (DAO) governance setup and first Community Treasury vote',
-    'Public sale of 9401 Everdragons2 Genesis tokens'
+  '2022-2025', [
+    'Everything changed. No more Origins game, no more EverDragons2 MiniGame. The bearish market ate everything.'
   ],
-  '2023', [
-    'Partnerships with popular games to integrate Everdragons2 as a cross-game asset',
-    'In-house development for Origins game',
-    'Launch of Origins play-to-earn crypto-metaverse game'
+  'April 2025', [
+    'Reunion of the EverDragons2 on Ethereum'
+  ],
+  '2025-2026', [
+    'Restarting the project with a new vision.',
+    'Distributing the not-yet-minted '
   ]
 ]
 

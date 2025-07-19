@@ -31,7 +31,7 @@ pushed the technical boundaries on multiple fronts.`
       <Row>
           <Col>
             <div className={'textBlock'}>
-              <div className={'centered'}><img src={'/images/logo-ED.png'} alt={' '} style={{width: '40%'}}/></div>
+              <div className={'centered'}><img src={'https://arweave.net/rfoyL5aDkgPmyPX8mYdJxZGyFOJ1LOX5LFmNg8_R9Ys/everDragonsLogo.png'} alt={' '} style={{width: '40%'}}/></div>
               <Markdown source={text}/>
             </div>
           </Col>
@@ -41,21 +41,21 @@ pushed the technical boundaries on multiple fronts.`
           <Row className={'dragons-show'}>
             <Col xs={6} lg={4}>
               <div className={'textBlock'}>
-                <Ab label={<img src={'/images/avatarp.png'}/>}
+                <Ab label={<img src={'https://arweave.net/rfoyL5aDkgPmyPX8mYdJxZGyFOJ1LOX5LFmNg8_R9Ys/avatarp.png'}/>}
                     link={'https://opensea.io/assets/0x772da237fc93ded712e5823b497db5991cc6951e/1'}/>
                 <div className={'centered teamname'}>Patrick</div>
               </div>
             </Col>
             <Col xs={6} lg={4}>
               <div className={'textBlock'}>
-                <Ab label={<img src={'/images/avatarj.png'}/>}
+                <Ab label={<img src={'https://arweave.net/rfoyL5aDkgPmyPX8mYdJxZGyFOJ1LOX5LFmNg8_R9Ys/avatarj.png'}/>}
                     link={'https://opensea.io/assets/0x772da237fc93ded712e5823b497db5991cc6951e/921'}/>
                 <div className={'centered teamname'}>Jacqueline</div>
               </div>
             </Col>
             <Col xs={6} lg={4}>
               <div className={'textBlock'}>
-                <Ab label={<img src={'/images/avatarm.png'}/>}
+                <Ab label={<img src={'https://arweave.net/rfoyL5aDkgPmyPX8mYdJxZGyFOJ1LOX5LFmNg8_R9Ys/avatarm.png'}/>}
                     link={'https://opensea.io/assets/0x772da237fc93ded712e5823b497db5991cc6951e/969'}/>
                 <div className={'centered teamname'}>Marc</div>
               </div>

@@ -5,6 +5,7 @@ const {Link} = ReactRouterDOM
 
 import * as Scroll from 'react-scroll'
 import Markdown from 'react-markdown-it'
+import Ab from '../Ab'
 
 import Base from '../Base'
 
@@ -16,7 +17,7 @@ It was 2018. They had been searching for years through hundreds of dimensions wh
 
 Three years have passed since the first Everdragons arrived in Ethereum in 2018. After a strenuous Crypto Winter and a widespread pandemic, life returns stronger than ever with kittens, apes, and many other creatures.
 
-As for the Everdragons, they are awakening from their icy slumber. The second group of Everdragons explorers, aptly named Everdragons2, are on their way to settle in nearby dimensions. Everdragons2 settled in their new dimension, Polygon, where with new technology they forged a permanent portal to their homeland.
+As for the Everdragons, they are awakening from their icy slumber. The second group of Everdragons explorers, aptly named EverDragons2, began their journey as Genesis Tokens on Polygon in 2021. However, the true home of the Everdragons has always been Ethereum. After a break in the adventure, in April 2025, the Genesis Tokens have now been reunited with their homeland on the official EverDragons2 contract at [everdragons2.eth](https://etherscan.io/address/everdragons2.eth), where they belong alongside their ancestors.
 
 `
     return (
@@ -26,9 +27,9 @@ As for the Everdragons, they are awakening from their icy slumber. The second gr
           <Col>
             <div className={'textBlock'}>
               <Markdown source={short}/>
-              {/*<div style={{marginTop: 12}}>*/}
-              {/*  <Link to={'/story'}><b>[ Read the full story ]</b></Link>*/}
-              {/*</div>*/}
+              <div style={{marginTop: 12}}>
+                <Ab link={'https://opensea.io/collection/everdragons2?sortBy=rarity&sortDirection=desc'} label={'View the collection on OpenSea'}/>
+              </div>
             </div>
           </Col>
       </Row>

@@ -16,26 +16,18 @@ export default class FullStory extends Base {
   }
 
   render() {
-    const short = `
-### 2018
+    const story2018 = `### 2018
 
-They’d been traveling alone for hundreds of years through deep space when they finally saw signs of life. A planet with only ten thousand humanoids, and kittens growing uncontrolled.
-
-The [Everdragons](https://everdragons.com) landed in June 2018. A group of one thousand explorers settled on the northern part of the planet to recover from the strenuous voyage. Or so they hoped. An even bigger catastrophe was about to threaten their existence. Crypto winter was coming.
-
-`
-    const long0 = `### 2018
-
-They’d been traveling alone for hundreds of years through deep space when they finally saw signs of life. A planet with only ten thousand humanoids, and kittens growing uncontrolled.
+They'd been traveling alone for hundreds of years through deep space when they finally saw signs of life. A planet with only ten thousand humanoids, and kittens growing uncontrolled.
 
 The Everdragons landed in June 2018. A group of one thousand explorers settled on the northern part of the planet to recover from the strenuous voyage. Or so they hoped. An even bigger catastrophe was about to threaten their existence. Crypto winter was coming.
 `
-    const long1 = `
+    const storyCryptoWinter = `
 It didn't take long for the dragons to get used to a new lifestyle on this rich planet. When temperatures started to drop, the youngest dragons were simply too spoiled with feasts and engaged in battles to notice, and soon they started to fall into a deep slumber that could last forever.
 
 The elders saw what was happening and regrouped to call for help from home. The communication systems on this new planet were simply too slow, but thankfully the dragons summoned the strongest dragon from the Fire family to embark on the mission. The dragon flew into the Tron portal. But soon after, exhausted, even the last dragon that remained closed his eyes.
 `
-    const long2 = `
+    const storyBackHome = `
 ### Back Home
 
 For the first time in history, an explorer came back to the home planet. The purest nobles from the family of Fire were rapidly summoned to hear their report: a liveable planet was found, and less than two years away... It was time for a long-deserved new beginning.
@@ -46,7 +38,7 @@ A group of philosophers and world leaders developed a plan for a new start. Two 
 
 Listening to the explorer's report, the nobles from the pure family of Fire had a question: three hundred years since the plan was designed, did it still make sense? One of the nobles took control--it wasn't time for doubt but for action. The rest of the elite was notified, a spaceship was readied, and the expedition could begin. Soon, it would be a new beginning.
 `
-    const long3 = `
+    const storyToday = `
 ### Today
 
 Three years have passed since the Everdragons' landing. After a strenuous winter and a widespread pandemic, life is reemerging stronger than ever: kittens, apes and so many new forms and colors. And yet the dragons are still asleep, imprisoned in ice and snow.
@@ -61,21 +53,21 @@ A new bright light appears in the center of the sky. The spaceship is getting cl
             <Col>
               <div className={'textBlock'}>
                 <div>
-                  <Markdown source={long0}/>
+                  <Markdown source={story2018}/>
                   <div className={'centered'}><Ab link={'https://everdragons.com'} className={'pc70'}
-                                                  label={<img src={'/images/logo-ED.png'} alt={'The four elements'}/>}/></div>
-                  <Markdown source={long1}/>
+                                                  label={<img src={'https://arweave.net/rfoyL5aDkgPmyPX8mYdJxZGyFOJ1LOX5LFmNg8_R9Ys/everDragonsLogo.png'} alt={'The four elements'}/>}/></div>
+                  <Markdown source={storyCryptoWinter}/>
                   <div style={{height: 24, clear: 'both'}}>{' '}</div>
                   <CenteredImage src={'/images/00269.png'} />
-                  <Markdown source={long2}/>
+                  <Markdown source={storyBackHome}/>
                   <div style={{height: 24, clear: 'both'}}>{' '}</div>
                   <CenteredImage src={'/images/00265.png'} />
-                  <Markdown source={long3}/>
+                  <Markdown source={storyToday}/>
 
                   <div style={{height: 24, clear: 'both'}}>{' '}</div>
-                  <CenteredImage src={'/images/everDragonsLogo.png'} />
+                  <CenteredImage src={'https://arweave.net/rfoyL5aDkgPmyPX8mYdJxZGyFOJ1LOX5LFmNg8_R9Ys/everDragonsLogo.png'} />
                   <div className={'centered'}>
-                    <h2 className={'likeh1'}>Welcome the Everdragons2!</h2>
+                    <h2 className={'likeh1'}>Welcome the EverDragons2!</h2>
                   </div>
                 </div>
               </div>

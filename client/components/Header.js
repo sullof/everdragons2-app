@@ -115,7 +115,7 @@ export default class Header extends Base {
     }
 
     return <Navbar expanded={expanded}  fixed="top" bg="light" expand="lg" className={'roboto'}>
-      <Navbar.Brand href="/"><img src={'/images/everDragons2Icon.png'} style={{height: 40}}/></Navbar.Brand>
+      <Navbar.Brand href="/"><img src={'https://arweave.net/rfoyL5aDkgPmyPX8mYdJxZGyFOJ1LOX5LFmNg8_R9Ys/everDragons2Icon.png'} style={{height: 40}}/></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav"
                      onClick={ this.setExpanded}
       />
@@ -142,18 +142,16 @@ export default class Header extends Base {
             {/*<Scroll.Link*/}
             {/*  offset={-80}*/}
             {/*  spy={true} smooth={true} to='sale' onClick={this.setExpanded}>Sale</Scroll.Link>*/}
-            <Scroll.Link
+            {/*<Scroll.Link
               offset={-80}
-              spy={true} smooth={true} to='faq' onClick={this.setExpanded}>FAQ</Scroll.Link>
+              spy={true} smooth={true} to='faq' onClick={this.setExpanded}>FAQ</Scroll.Link>*/}
             {/*<Scroll.Link*/}
             {/*  offset={-80}*/}
             {/*  spy={true} smooth={true} to='drops' onClick={this.setExpanded}>Drops</Scroll.Link>*/}
-            <Scroll.Link
+
+            {/*<Scroll.Link
               offset={-80}
-              spy={true} smooth={true} to='origins' onClick={this.setExpanded}>Origins</Scroll.Link>
-            <Scroll.Link
-              offset={-80}
-              spy={true} smooth={true} to='team' onClick={this.setExpanded}>Team</Scroll.Link>
+              spy={true} smooth={true} to='team' onClick={this.setExpanded}>Team</Scroll.Link>*/}
             {/*<Scroll.Link*/}
             {/*  offset={-80}*/}
             {/*  spy={true} smooth={true} to='ed'>ED Original</Scroll.Link>*/}
@@ -175,18 +173,9 @@ export default class Header extends Base {
         <Navbar.Text className={'socialLinks2'}>
 
           <a className="item" target="_blank" href="https://twitter.com/everdragons2" rel="noreferrer">
-            <i className="fab fa-twitter" /> <span className="roboto300">Twitter</span>
+            <i className="fab fa-twitter" /> <span className="roboto300">X</span>
           </a>
-          <a className="item"
-             href={'https://discord.gg/AzfFnUjrnG'}
-             rel="noreferrer">
-            <i className="fab fa-discord" /> <span className="roboto300">Discord</span>
-          </a>
-          <a className="item"
-             href={'https://medium.com/ndujalabs'}
-             rel="noreferrer">
-            <i className="fab fa-medium" /> <span className="roboto300">Blog</span>
-          </a>
+          
         </Navbar.Text>
 
         <Navbar.Text>
