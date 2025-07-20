@@ -6,7 +6,7 @@ const DragonHead = ({ dragonName, className = '', dragonMetadata = null }) => {
   const [error, setError] = useState(null);
   const [downloading, setDownloading] = useState(false);
   const [showDownloadOptions, setShowDownloadOptions] = useState(false);
-  const [transparentBackground, setTransparentBackground] = useState(true);
+  const [includeBackground, setIncludeBackground] = useState(false);
   const svgRef = useRef(null);
 
   useEffect(() => {
@@ -96,6 +96,38 @@ const DragonHead = ({ dragonName, className = '', dragonMetadata = null }) => {
 
 
 
+  // Helper function to compose the final image with all pieces
+  const composeAndDownload = (croppedCtx, canvas, cropX, cropY, cropSize, url, croppedCanvas, skyImage = null, auraImage = null) => {
+    // Draw Sky background if available
+    if (skyImage) {
+      croppedCtx.drawImage(skyImage, 0, 0, cropSize, cropSize);
+    }
+    
+    // Draw Aura on top if available
+    if (auraImage) {
+      croppedCtx.drawImage(auraImage, 0, 0, cropSize, cropSize);
+    }
+    
+    // Draw the head on top
+    croppedCtx.drawImage(canvas, cropX, cropY, cropSize, cropSize, 0, 0, 612, 612);
+    
+    // Download the final image
+    croppedCanvas.toBlob((blob) => {
+      const downloadUrl = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = downloadUrl;
+      link.download = `${dragonName}_PFP.png`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Clean up
+      URL.revokeObjectURL(downloadUrl);
+      URL.revokeObjectURL(url);
+      setDownloading(false);
+    }, 'image/png');
+  };
+
   // Helper function to load background images and composite
   const loadBackgroundImages = async (croppedCtx, canvas, cropX, cropY, cropSize, url, croppedCanvas) => {
     try {
@@ -110,8 +142,6 @@ const DragonHead = ({ dragonName, className = '', dragonMetadata = null }) => {
       
       skyImage.onload = () => {
         console.log('Sky image loaded, size:', skyImage.width, 'x', skyImage.height);
-        // Draw Sky image as background - scale to fit the crop area
-        croppedCtx.drawImage(skyImage, 0, 0, cropSize, cropSize);
         
         if (auraUrl) {
           // Load Aura image
@@ -120,116 +150,32 @@ const DragonHead = ({ dragonName, className = '', dragonMetadata = null }) => {
           
           auraImage.onload = () => {
             console.log('Aura image loaded, size:', auraImage.width, 'x', auraImage.height);
-            // Draw Aura image on top - scale to fit the crop area
-            croppedCtx.drawImage(auraImage, 0, 0, cropSize, cropSize);
-            // Draw the cropped head on top
-            croppedCtx.drawImage(canvas, cropX, cropY, cropSize, cropSize, 0, 0, 612, 612);
-            
-            // Convert to PNG and download directly (no scaling)
-            croppedCanvas.toBlob((blob) => {
-              const downloadUrl = URL.createObjectURL(blob);
-              const link = document.createElement('a');
-              link.href = downloadUrl;
-              link.download = `${dragonName}-head.png`;
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-              
-              // Clean up
-              URL.revokeObjectURL(downloadUrl);
-              URL.revokeObjectURL(url);
-              setDownloading(false);
-            }, 'image/png');
+            composeAndDownload(croppedCtx, canvas, cropX, cropY, cropSize, url, croppedCanvas, skyImage, auraImage);
           };
           
           auraImage.onerror = () => {
             console.error('Failed to load Aura image');
-            // Continue without Aura
-            croppedCtx.drawImage(canvas, cropX, cropY, cropSize, cropSize, 0, 0, 612, 612);
-            
-            // Convert to PNG and download directly (no scaling)
-            croppedCanvas.toBlob((blob) => {
-              const downloadUrl = URL.createObjectURL(blob);
-              const link = document.createElement('a');
-              link.href = downloadUrl;
-              link.download = `${dragonName}-head.png`;
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-              
-              // Clean up
-              URL.revokeObjectURL(downloadUrl);
-              URL.revokeObjectURL(url);
-              setDownloading(false);
-            }, 'image/png');
+            composeAndDownload(croppedCtx, canvas, cropX, cropY, cropSize, url, croppedCanvas, skyImage, null);
           };
           
           auraImage.src = auraUrl;
         } else {
-          // No Aura, just draw the head on top of Sky
-          croppedCtx.drawImage(canvas, cropX, cropY, cropSize, cropSize, 0, 0, 612, 612);
-          
-          // Convert to PNG and download directly (no scaling)
-          croppedCanvas.toBlob((blob) => {
-            const downloadUrl = URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = downloadUrl;
-            link.download = `${dragonName}-head.png`;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            // Clean up
-            URL.revokeObjectURL(downloadUrl);
-            URL.revokeObjectURL(url);
-            setDownloading(false);
-          }, 'image/png');
+          // No Aura, just compose with Sky
+          composeAndDownload(croppedCtx, canvas, cropX, cropY, cropSize, url, croppedCanvas, skyImage, null);
         }
       };
       
       skyImage.onerror = () => {
         console.error('Failed to load Sky image');
         // Fallback to transparent background
-        croppedCtx.drawImage(canvas, cropX, cropY, cropSize, cropSize, 0, 0, 612, 612);
-        
-        // Convert to PNG and download directly (no scaling)
-        croppedCanvas.toBlob((blob) => {
-          const downloadUrl = URL.createObjectURL(blob);
-          const link = document.createElement('a');
-          link.href = downloadUrl;
-          link.download = `${dragonName}-head.png`;
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          
-          // Clean up
-          URL.revokeObjectURL(downloadUrl);
-          URL.revokeObjectURL(url);
-          setDownloading(false);
-        }, 'image/png');
+        composeAndDownload(croppedCtx, canvas, cropX, cropY, cropSize, url, croppedCanvas, null, null);
       };
       
       skyImage.src = skyUrl;
     } catch (error) {
       console.error('Error in loadBackgroundImages:', error);
       // Fallback to transparent background
-      croppedCtx.drawImage(canvas, cropX, cropY, cropSize, cropSize, 0, 0, 612, 612);
-      
-      // Convert to PNG and download directly (no scaling)
-      croppedCanvas.toBlob((blob) => {
-        const downloadUrl = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = downloadUrl;
-        link.download = `${dragonName}-head.png`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        
-        // Clean up
-        URL.revokeObjectURL(downloadUrl);
-        URL.revokeObjectURL(url);
-        setDownloading(false);
-      }, 'image/png');
+      composeAndDownload(croppedCtx, canvas, cropX, cropY, cropSize, url, croppedCanvas, null, null);
     }
   };
 
@@ -284,28 +230,9 @@ const DragonHead = ({ dragonName, className = '', dragonMetadata = null }) => {
         
         console.log('Cropped canvas size:', croppedCanvas.width, 'x', croppedCanvas.height);
         
-        if (transparentBackground) {
-          // Draw the cropped portion with transparency
-          croppedCtx.drawImage(canvas, cropX, cropY, cropSize, cropSize, 0, 0, 612, 612);
-          
-          // Convert to PNG and download directly (no scaling)
-          croppedCanvas.toBlob((blob) => {
-            const downloadUrl = URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = downloadUrl;
-            link.download = `${dragonName}-head.png`;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            // Clean up
-            URL.revokeObjectURL(downloadUrl);
-            URL.revokeObjectURL(url);
-            setDownloading(false);
-          }, 'image/png');
-        } else {
+        if (includeBackground) {
           // Create background using Sky and Aura images
-          if (dragonMetadata && dragonMetadata.attributes) {
+          if (dragonMetadata && dragonMetadata.assets) {
             loadBackgroundImages(croppedCtx, canvas, cropX, cropY, cropSize, url, croppedCanvas);
           } else {
             // Fallback to transparent background if no metadata
@@ -316,7 +243,7 @@ const DragonHead = ({ dragonName, className = '', dragonMetadata = null }) => {
               const downloadUrl = URL.createObjectURL(blob);
               const link = document.createElement('a');
               link.href = downloadUrl;
-              link.download = `${dragonName}-head.png`;
+              link.download = `${dragonName}_PFP.png`;
               document.body.appendChild(link);
               link.click();
               document.body.removeChild(link);
@@ -327,6 +254,25 @@ const DragonHead = ({ dragonName, className = '', dragonMetadata = null }) => {
               setDownloading(false);
             }, 'image/png');
           }
+        } else {
+          // Draw the cropped portion with transparency
+          croppedCtx.drawImage(canvas, cropX, cropY, cropSize, cropSize, 0, 0, 612, 612);
+          
+          // Convert to PNG and download directly (no scaling)
+          croppedCanvas.toBlob((blob) => {
+            const downloadUrl = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = downloadUrl;
+            link.download = `${dragonName}_PFP.png`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Clean up
+            URL.revokeObjectURL(downloadUrl);
+            URL.revokeObjectURL(url);
+            setDownloading(false);
+          }, 'image/png');
         }
       };
       
@@ -363,11 +309,11 @@ const DragonHead = ({ dragonName, className = '', dragonMetadata = null }) => {
           <div className="checkbox-container">
             <input
               type="checkbox"
-              id={`transparent-${dragonName}`}
-              checked={transparentBackground}
-              onChange={(e) => setTransparentBackground(e.target.checked)}
+              id={`include-background-${dragonName}`}
+              checked={includeBackground}
+              onChange={(e) => setIncludeBackground(e.target.checked)}
             />
-            <label htmlFor={`transparent-${dragonName}`}>
+            <label htmlFor={`include-background-${dragonName}`}>
               Include background
             </label>
           </div>
