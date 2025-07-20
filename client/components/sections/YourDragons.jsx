@@ -254,7 +254,30 @@ const YourDragons = ({ Store, setStore }) => {
   }
 
   if (!isConnected || !address) {
-    return null
+    return (
+      <div className={'home-section'}>
+        <Scroll.Element name='mydragons'><h1>Your Dragons</h1></Scroll.Element>
+        <Container>
+          <Row>
+            <Col>
+              <div className={'textBlock centered'}>
+                <img 
+                  src="https://arweave.net/PqljnVXt30MMFjFovG6tbbniVWrRFH5FPXcFQKQtmdQ/Agdaroth.webp" 
+                  alt="Agdaroth Dragon" 
+                  style={{ 
+                    maxWidth: '200px', 
+                    height: 'auto', 
+                    marginBottom: '20px',
+                    borderRadius: '8px'
+                  }} 
+                />
+                <p>Connect your wallet to see your dragons and download your PFP</p>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    )
   }
 
   if (balanceLoading) {
