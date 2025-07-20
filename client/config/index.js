@@ -1,4 +1,4 @@
-const Everdragons2 = require('./EverDragons2.json')
+import Everdragons2 from './EverDragons2.json'
 
 let isDev
 if (typeof window !== 'undefined') {
@@ -31,11 +31,11 @@ const config = {
   address: {
     1337: '0x32EEce76C2C2e8758584A83Ee2F522D4788feA0f',
     5: '0x7b647966E070623C9CC96C3d7f635E47dAAEaBaF',
-    1: '0xEEB9931Fad89cDa0d40289da0CA13a92ef54D31A',
+    1: 'everdragons2.eth',
     80001: '0x9F0F2fC519F3169C51081d54D9f8E484BDeC36F7',
     137: '0x9F0F2fC519F3169C51081d54D9f8E484BDeC36F7'
   },
   abi: Everdragons2.abi
 }
 
-module.exports = config
+export default config

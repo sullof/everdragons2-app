@@ -1,6 +1,6 @@
 const ethers = require('ethers')
 const {Contract} = require('@ethersproject/contracts')
-const config = require('../../client/config')
+const config = require('../config')
 const requireOrMock = require('require-or-mock')
 const apiKeys = requireOrMock('db/apiKeys.js', {
   infuraApiKeys: 'saieui32eh23hnieudfhnsi'
