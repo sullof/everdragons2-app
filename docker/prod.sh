@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+# remove existing
 docker stop everdragons2-com
 docker rm everdragons2-com
 
+# restart
 docker run -d \
   --name everdragons2-com \
   -p 6660 \
