@@ -90,23 +90,14 @@ const DragonHead = ({ dragonName, className = '', dragonMetadata = null }) => {
   };
 
   // Helper function to compose the final image with all pieces
-  const composeAndDownload = (croppedCtx, canvas, cropX, cropY, cropSize, url, croppedCanvas, skyImage = null, auraImage = null) => {
-    // First, let's test with a simple colored background to see if the logic works
-    // croppedCtx.fillStyle = '#ff0000'; // Red background for testing
-    // croppedCtx.fillRect(0, 0, 612, 612);
-    // showDebugCanvas(croppedCanvas, 'After adding test red background');
+  const composeAndDownload = (croppedCtx, canvas, cropX, cropY, cropSize, url, croppedCanvas, skyImage, auraImage) => {
+    // Draw Sky background - scale to 612x612 (no cropping)
+    croppedCtx.drawImage(skyImage, 0, 0, 612, 612);
+    showDebugCanvas(croppedCanvas, 'After adding Sky background');
 
-    // Draw Sky background if available - scale to 612x612 (no cropping)
-    if (skyImage) {
-      croppedCtx.drawImage(skyImage, 0, 0, 612, 612);
-      showDebugCanvas(croppedCanvas, 'After adding Sky background');
-    }
-
-    // Draw Aura on top if available - scale to 612x612 (no cropping)
-    if (auraImage) {
-      croppedCtx.drawImage(auraImage, 0, 0, 612, 612);
-      showDebugCanvas(croppedCanvas, 'After adding Aura background');
-    }
+    // Draw Aura on top - scale to 612x612 (no cropping)
+    croppedCtx.drawImage(auraImage, 0, 0, 612, 612);
+    showDebugCanvas(croppedCanvas, 'After adding Aura background');
 
     // Draw the cropped head on top
     croppedCtx.drawImage(canvas, cropX, cropY, cropSize, cropSize, 0, 0, 612, 612);
@@ -134,7 +125,7 @@ const DragonHead = ({ dragonName, className = '', dragonMetadata = null }) => {
   const loadBackgroundImages = async (croppedCtx, canvas, cropX, cropY, cropSize, url, croppedCanvas, assets) => {
 
     const skyUrl = convertArweaveUrl(assets.Sky);
-    const auraUrl = assets.Aura ? convertArweaveUrl(assets.Aura) : null;
+    const auraUrl = convertArweaveUrl(assets.Aura);
 
     console.log('Loading background images...');
     console.log('Full dragonMetadata:', dragonMetadata);
@@ -164,16 +155,12 @@ const DragonHead = ({ dragonName, className = '', dragonMetadata = null }) => {
 
         }
 
-    // Load Sky image
-      const skyImage = await loadImageWithFetch(skyUrl);
-
-      if (auraUrl) {
-        const auraImage = await loadImageWithFetch(auraUrl);
-        composeAndDownload(croppedCtx, canvas, cropX, cropY, cropSize, url, croppedCanvas, skyImage, auraImage);
-      } else {
-        // No Aura, just compose with Sky
-        composeAndDownload(croppedCtx, canvas, cropX, cropY, cropSize, url, croppedCanvas, skyImage, null);
-      }
+    // Load both Sky and Aura images
+    const skyImage = await loadImageWithFetch(skyUrl);
+    const auraImage = await loadImageWithFetch(auraUrl);
+    
+    // Compose with both backgrounds
+    composeAndDownload(croppedCtx, canvas, cropX, cropY, cropSize, url, croppedCanvas, skyImage, auraImage);
 };
 
   const downloadAsPng = async () => {
