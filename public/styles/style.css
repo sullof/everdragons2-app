@@ -89,6 +89,10 @@ body {
 
 .modal-header {
     padding: 0.3rem !important;
+    background-image: url('https://arweave.net/kYMjeSHkvMWYJPcuJTea4ogLxqqx2aKiZ2eDW5o0anY/navbar.jpg') !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .textBlock {
@@ -598,7 +602,7 @@ span.button {
 }
 
 .navbar {
-    background-image: url('../images/navbar.jpg') !important;
+    background-image: url('https://arweave.net/kYMjeSHkvMWYJPcuJTea4ogLxqqx2aKiZ2eDW5o0anY/navbar.jpg') !important;
     background-color: #e7fbfc;
     border-bottom: none !important;
     background-size: 100%;
@@ -998,7 +1002,7 @@ span.button {
 
 /* Modal styles */
 .modal-content {
-    background-image: url(../images/bg.jpg);
+    background-image: url('https://arweave.net/kYMjeSHkvMWYJPcuJTea4ogLxqqx2aKiZ2eDW5o0anY/bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -1257,7 +1261,7 @@ span.button {
 /* Download options styles */
 .download-options {
   position: relative;
-  margin-top: 10px;
+  margin-top: -90px;
   background: transparent;
   color: #333;
   padding: 8px 0;
@@ -1268,37 +1272,43 @@ span.button {
 
 .download-button-container {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  gap: 12px;
 }
 
 .download-pfp-btn {
-  background: #28a745;
-  color: white;
-  border: none;
-  padding: 8px 16px;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  background-color: #e0efe8;
+  border-color: #28a745;
+  color: #155724;
+  border: 1px solid #28a745;
   border-radius: 4px;
-  font-size: 12px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-  margin-bottom: 8px;
-  width: 100%;
+  transition: all 0.2s ease;
 }
 
 .download-pfp-btn:hover {
-  background: #218838;
+  transform: scale(1.05);
+  background-color: #d1e7dd;
+  border-color: #1e7e34;
+  color: #0f5132;
 }
 
 .download-pfp-btn:disabled {
   background: #6c757d;
+  border-color: #6c757d;
+  color: #fff;
   cursor: not-allowed;
+  transform: none;
 }
 
 .checkbox-container {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 10px;
+  font-size: 0.8rem;
+  color: #155724;
 }
 
 .checkbox-container input[type="checkbox"] {
@@ -1588,4 +1598,72 @@ span.button {
     padding: 0 3px !important;
     font-size: 0.8rem !important;
   }
+}
+
+/* Debug Modal Styles */
+.debug-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.debug-modal {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.debug-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.debug-modal-header h4 {
+  margin: 0;
+  color: #333;
+}
+
+.debug-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.debug-close-btn:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.debug-modal-content {
+  text-align: center;
+}
+
+.debug-modal-content canvas {
+  display: block;
+  margin: 0 auto;
 }

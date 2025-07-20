@@ -5,6 +5,7 @@ import * as Scroll from 'react-scroll'
 import Base from '../Base'
 import OpenSeaIcon from '../OpenSeaIcon.jsx'
 import DragonHead from '../DragonHead.jsx'
+import LoadingSpinner from '../LoadingSpinner.jsx'
 
 // EverDragons2 contract ABI for balanceOf and tokenOfOwnerByIndex
 const ERC721_ABI = [
@@ -182,7 +183,6 @@ const YourDragons = ({ Store, setStore }) => {
 
             if (!metadata) {
               // Fetch metadata from Arweave only if not cached
-              try {
                 const metadataResponse = await fetch(`https://arweave.net/qoTieeAFFW2wocsXd9Vi004HVZbhQxT3uFs1a0fg1JM/${tokenIdNum}`)
                 metadata = await metadataResponse.json()
 
@@ -190,30 +190,12 @@ const YourDragons = ({ Store, setStore }) => {
                 setCachedMetadata(tokenIdNum, metadata)
                 // console.log(`Cached metadata for token ${tokenIdNum}`)
 
-              } catch (metadataError) {
-                console.error(`Error fetching metadata for dragon ${tokenIdNum}:`, metadataError)
-                metadata = {
-                  name: `Dragon #${tokenIdNum}`,
-                  image: `/dragons/png/${tokenIdNum}.png`,
-                  attributes: []
-                }
-              }
-            } else {
-              // console.log(`Using cached metadata for token ${tokenIdNum}`)
             }
 
-            const newDragon = {
-              id: tokenIdNum,
-              name: metadata.name || `Dragon #${tokenIdNum}`,
-              image: metadata.image || `/dragons/png/${tokenIdNum}.png`,
-              fallbackImage: '/images/agdaroth.png',
-              attributes: metadata.attributes || []
-            }
-
-            dragons.push(newDragon)
+            dragons.push(metadata)
 
             // Add the new dragon to the list immediately
-            setUserDragons(prevDragons => [...prevDragons, newDragon])
+            setUserDragons(prevDragons => [...prevDragons, metadata])
 
             // Small delay to show loading effect
             await new Promise(resolve => setTimeout(resolve, 100))
@@ -277,11 +259,7 @@ const YourDragons = ({ Store, setStore }) => {
             <Col>
               <div className={'textBlock centered'}>
                 <div className="loading-logo-container">
-                  <img
-                    src="https://arweave.net/rfoyL5aDkgPmyPX8mYdJxZGyFOJ1LOX5LFmNg8_R9Ys/everDragons2Icon.png"
-                    alt="EverDragons2"
-                    className="loading-logo"
-                  />
+                  <LoadingSpinner size="medium" />
                 </div>
                 <p>Checking your dragon collection...</p>
               </div>
@@ -314,6 +292,7 @@ const YourDragons = ({ Store, setStore }) => {
     )
   }
 
+
   return (
     <div className={'home-section'}>
       <Scroll.Element name='mydragons'><h1>Your Dragons</h1></Scroll.Element>
@@ -342,7 +321,7 @@ const YourDragons = ({ Store, setStore }) => {
 
             <Row>
               {userDragons.map((dragon) => (
-                <Col key={dragon.id} xs={6} sm={4} md={3} lg={2} className="mb-3">
+                <Col key={dragon.tokenId} xs={6} sm={4} md={3} lg={2} className="mb-3">
                   <div
                     className="dragon-simple-card"
                     onClick={() => handleDragonClick(dragon)}
@@ -351,9 +330,6 @@ const YourDragons = ({ Store, setStore }) => {
                     <div className="dragon-image-container">
                       <img
                         src={dragon.image}
-                        onError={(e) => {
-                          e.target.src = dragon.fallbackImage
-                        }}
                         alt={dragon.name}
                         className="dragon-image"
                       />
@@ -365,11 +341,7 @@ const YourDragons = ({ Store, setStore }) => {
               {loading && userDragons.length < Number(balance) && (
                 <Col xs={12} className="text-center">
                   <div className="loading-logo-container">
-                    <img
-                      src="https://arweave.net/rfoyL5aDkgPmyPX8mYdJxZGyFOJ1LOX5LFmNg8_R9Ys/everDragons2Icon.png"
-                      alt="EverDragons2"
-                      className="loading-logo-small"
-                    />
+                    <LoadingSpinner size="small" />
                   </div>
                   <p className="mt-2">Loading more dragons...</p>
                 </Col>
@@ -382,7 +354,7 @@ const YourDragons = ({ Store, setStore }) => {
       {/* Dragon Details Modal */}
       <Modal show={showModal} onHide={handleCloseModal} size="lg">
         <Modal.Header className="text-center position-relative">
-          <Modal.Title className="w-100 text-center">{selectedDragon?.name}</Modal.Title>
+          <Modal.Title className="w-100 text-center">{selectedDragon?.name} (#{selectedDragon?.tokenId})</Modal.Title>
           {selectedDragon && (
             <div className="modal-header-actions">
               <a
