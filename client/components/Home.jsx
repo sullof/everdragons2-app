@@ -51,7 +51,7 @@ export default class Home extends Base {
         <Row>
           <Col className={'centered'}>
             <Scroll.Element name='intro'>
-              <img src={'https://arweave.net/rfoyL5aDkgPmyPX8mYdJxZGyFOJ1LOX5LFmNg8_R9Ys/everdragons2.png'} className={'ed2logo'}/>
+              <img src={'https://arweave.net/rfoyL5aDkgPmyPX8mYdJxZGyFOJ1LOX5LFmNg8_R9Ys/everDragons2Logo2.png'} className={'ed2logo2'}/>
               {/*<img src={'/images/everDragons2Logo2.png'} className={'ed2logo'}/>*/}
             </Scroll.Element>
           </Col>
