@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import LoadingSpinner from './LoadingSpinner.jsx';
+import { convertArweaveUrl } from '../utils/Address.js';
 
 const DragonHead = ({ dragonName, className = '', dragonMetadata = null }) => {
   const [headSvg, setHeadSvg] = useState(null);
@@ -20,8 +21,8 @@ const DragonHead = ({ dragonName, className = '', dragonMetadata = null }) => {
       setLoading(true);
       setError(null);
 
-      // Get the Dragon asset URL
-      const arweaveUrl = dragonMetadata.assets.Dragon;
+      // Get the Dragon asset URL and convert if needed
+      const arweaveUrl = convertArweaveUrl(dragonMetadata.assets.Dragon);
 
       const response = await fetch(arweaveUrl);
       if (!response.ok) {
@@ -132,8 +133,8 @@ const DragonHead = ({ dragonName, className = '', dragonMetadata = null }) => {
   // Helper function to load background images and composite
   const loadBackgroundImages = async (croppedCtx, canvas, cropX, cropY, cropSize, url, croppedCanvas, assets) => {
 
-    const skyUrl = assets.Sky;
-    const auraUrl = assets.Aura;
+    const skyUrl = convertArweaveUrl(assets.Sky);
+    const auraUrl = assets.Aura ? convertArweaveUrl(assets.Aura) : null;
 
     console.log('Loading background images...');
     console.log('Full dragonMetadata:', dragonMetadata);

@@ -6,6 +6,7 @@ import Base from '../Base'
 import OpenSeaIcon from '../OpenSeaIcon.jsx'
 import DragonHead from '../DragonHead.jsx'
 import LoadingSpinner from '../LoadingSpinner.jsx'
+import { convertArweaveUrlsInObject } from '../../utils/Address.js'
 
 // EverDragons2 contract ABI for balanceOf and tokenOfOwnerByIndex
 const ERC721_ABI = [
@@ -185,6 +186,12 @@ const YourDragons = ({ Store, setStore }) => {
               // Fetch metadata from Arweave only if not cached
                 const metadataResponse = await fetch(`https://arweave.net/qoTieeAFFW2wocsXd9Vi004HVZbhQxT3uFs1a0fg1JM/${tokenIdNum}`)
                 metadata = await metadataResponse.json()
+
+                // Convert ar:// URLs to https://arweave.net/ URLs for compatibility
+                metadata = convertArweaveUrlsInObject(metadata)
+                
+                // Log conversion for debugging
+                console.log(`Token ${tokenIdNum} metadata processed for ar:// compatibility`)
 
                 // Cache the metadata
                 setCachedMetadata(tokenIdNum, metadata)
