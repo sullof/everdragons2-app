@@ -420,6 +420,7 @@ const YourDragons = ({ Store, setStore }) => {
                 <DragonHead
                   dragonName={selectedDragon.name}
                   className="dragon-head-modal"
+                  dragonMetadata={selectedDragon}
                 />
               </div>
 
