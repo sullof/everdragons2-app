@@ -13,4 +13,4 @@ docker run -d \
   -e VIRTUAL_HOST=everdragons2.com,www.everdragons2.com \
   -e LETSENCRYPT_HOST=everdragons2.com,www.everdragons2.com \
   -e LETSENCRYPT_EMAIL=everdragons2@sullo.co \
-  -w /usr/src/app node:16 npm run start
+  -w /usr/src/app node:22 npm run start
