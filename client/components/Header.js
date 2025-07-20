@@ -1,8 +1,6 @@
 // eslint-disable-next-line no-undef
 import Ab from './Ab';
-
 const {Link} = ReactRouterDOM
-
 import * as Scroll from 'react-scroll'
 
 // eslint-disable-next-line no-undef
